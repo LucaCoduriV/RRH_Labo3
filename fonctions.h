@@ -8,13 +8,7 @@ Remarque(s) : <à compléter>
 Compilateur : Mingw-w64 g++ 8.1.0
 -----------------------------------------------------------------------------------
 */
-#include <cstdlib>
-#include <iostream>
-#include "fonctions.h"
-using namespace std;
-int main() {
-   int mois;
-   int annee;
-   moisAnneeCorrect(mois, annee);
-   return EXIT_SUCCESS;
-}
+#ifndef LABO_3_FONCTIONS_H
+#define LABO_3_FONCTIONS_H
+void moisAnneeCorrect(int& mois,int& annee);
+#endif //LABO_3_FONCTIONS_H
