@@ -24,3 +24,9 @@ void moisAnneeCorrect(int& mois,int& annee) {
       cin.ignore(numeric_limits<streamsize>::max(), '\n');
    } while (!saisieOK);
 }
+void saisirDates(int& moisDebut, int& anneeDebut, int& moisFin, int& anneeFin) {
+   cout << "Entrez la date de debut [1 - 12 1900 - 2100] : ";
+   moisAnneeCorrect(moisDebut, anneeDebut);
+   cout << "Entrez la date de fin [1 - 12 1900 - 2100] : ";
+   moisAnneeCorrect(moisFin, anneeFin);
+}

@@ -11,4 +11,5 @@ Compilateur : Mingw-w64 g++ 8.1.0
 #ifndef LABO_3_FONCTIONS_H
 #define LABO_3_FONCTIONS_H
 void moisAnneeCorrect(int& mois,int& annee);
+void saisirDates(int& moisDebut, int& anneeDebut, int& moisFin, int& anneeFin);
 #endif //LABO_3_FONCTIONS_H

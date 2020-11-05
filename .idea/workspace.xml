@@ -49,12 +49,12 @@
     <property name="cf.first.check.clang-format" value="false" />
   </component>
   <component name="RunManager">
-    <configuration name="RRH_Labo3" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="RRH_Labo3" TARGET_NAME="RRH_Labo3" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="RRH_Labo3" RUN_TARGET_NAME="RRH_Labo3">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+    <configuration name="RRH_Labo3" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="RRH_Labo3" TARGET_NAME="RRH_Labo3" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="RRH_Labo3" RUN_TARGET_NAME="RRH_Labo3">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
