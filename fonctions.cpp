@@ -19,7 +19,7 @@ void moisAnneeCorrect(int& mois,int& annee) {
       if (!(saisieOK = cin >> mois >> annee && mois <= 12 && mois >= 1
                        && annee >= 1900 && annee <= 2100))
       {
-         cin.clear(), cout << "Date non valide. Veuillez SVP recommencer." << endl;
+         cin.clear(), cout << "Date non valide, veuillez SVP recommencer." << endl;
       }
       cin.ignore(numeric_limits<streamsize>::max(), '\n');
    } while (!saisieOK);
