@@ -10,11 +10,12 @@ Compilateur : Mingw-w64 g++ 8.1.0
 */
 #include <cstdlib>
 #include <iostream>
+#include <iomanip>
 #include "fonctions.h"
 using namespace std;
 int main() {
-   int mois;
-   int annee;
-   moisAnneeCorrect(mois, annee);
+   unsigned a = 7;
+   unsigned b = 30;
+   afficherMoisAnnee(a,b);
    return EXIT_SUCCESS;
 }
