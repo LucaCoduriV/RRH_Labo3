@@ -36,7 +36,7 @@ void saisirDates( unsigned& moisDebut, unsigned& anneeDebut, unsigned& moisFin,
    moisAnneeCorrect(moisFin, anneeFin);
 }
 void afficherMoisAnnee( const unsigned& jourDebut, const unsigned& nombreJours, unsigned int mois, unsigned int annee ) {
-   cout << moisEnLitteral(mois) << " " << annee << endl << endl;
+   cout << endl << moisEnLitteral(mois) << " " << annee << endl << endl;
 
    unsigned nombreEspaces = jourDebut - 1;
    cout << " L  M  M  J  V  S  D" << endl;
@@ -51,6 +51,7 @@ void afficherMoisAnnee( const unsigned& jourDebut, const unsigned& nombreJours, 
       if ( i % 7 == 0 ) { cout << "\n"; }
       else { cout << " "; }
    }
+   cout << endl;
 }
 unsigned jsemaineDT(const unsigned& jour, const unsigned& mois, const unsigned&
 annee)
@@ -97,10 +98,6 @@ unsigned int nbreJoursMois(unsigned int mois, unsigned annee){
    }
 }
 
-void affichagePreambuleCalendrier(unsigned int mois, unsigned int annee) {
-   cout << moisEnLitteral(mois) << " " << annee << endl << endl;
-}
-
 string moisEnLitteral(unsigned int mois) {
    switch ((Mois) mois) {
       case Mois::JANVIER:
@@ -134,9 +131,12 @@ string moisEnLitteral(unsigned int mois) {
 void affichageDesCalendriers(unsigned moisDebut, unsigned anneeDebut, unsigned
 moisFin, unsigned anneeFin) {
    while (anneeDebut < anneeFin || (anneeDebut == anneeFin && moisDebut <= moisFin)) {
-      // Afficher calendrier
+      unsigned jourSemaine = jsemaineDT( 1, moisDebut, anneeDebut);
+      unsigned nombreJours = nbreJoursMois(moisDebut, anneeDebut);
+
+      afficherMoisAnnee( jourSemaine, nombreJours, moisDebut, anneeDebut );
       if (moisDebut >= 12) {
-         moisDebut = 0;
+         moisDebut = 1;
          ++anneeDebut;
       } else {
          ++moisDebut;

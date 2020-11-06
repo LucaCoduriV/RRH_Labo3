@@ -14,15 +14,19 @@ Compilateur : Mingw-w64 g++ 8.1.0
 #include "fonctions.h"
 using namespace std;
 int main() {
-   unsigned moisDebut, anneeDebut, moisFin, anneeFin;
+   while(true){
+      unsigned moisDebut, anneeDebut, moisFin, anneeFin;
+      saisirDates(moisDebut, anneeDebut, moisFin, anneeFin);
+      affichageDesCalendriers(moisDebut, anneeDebut, moisFin,  anneeFin);
 
-
-
-   for ( unsigned annee = anneeDebut; annee <= anneeFin; ++annee ) {
-      for ( unsigned mois = moisDebut; mois <= moisFin; ++mois ) {
-         // calculs/affichage
+      cout << "voulez vous quitter le programme ? [o/n]";
+      char reponse;
+      cin >> reponse;
+      if(reponse == 'o' || reponse == 'O'){
+         break;
       }
    }
+
 
    return EXIT_SUCCESS;
 }

@@ -22,7 +22,6 @@ annee);
 void saisieMoisAnnee(unsigned int& mois, unsigned int& annee);
 unsigned int nbreJoursMois(unsigned int mois, unsigned annee);
 bool estBissextile(unsigned int annee);
-void affichagePreambuleCalendrier(unsigned int mois, unsigned int annee);
 string moisEnLitteral(unsigned int);
 void affichageDesCalendriers(unsigned moisDebut, unsigned anneeDebut, unsigned
 moisFin, unsigned anneeFin);
