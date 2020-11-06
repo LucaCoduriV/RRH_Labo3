@@ -47,3 +47,30 @@ void afficherMoisAnnee( const unsigned& jourDebut, const unsigned& nombreJours )
       else { cout << " "; }
    }
 }
+unsigned jsemaineDT(const unsigned& jour, const unsigned& mois, const unsigned&
+annee)
+{
+   int m, a;
+   if (mois >= 3)
+   {
+      m = mois - 2;
+      a = annee;
+   }
+   else
+   {
+      m = mois + 10;
+      a = annee - 1;
+   }
+   int s = a / 100;
+   int n = a % 100;
+   int f = jour + n + 5 * s + n / 4 + s / 4 + (13 * m - 1) / 5;
+
+   unsigned jourSemaine = (f % 7);
+
+   //Permet de modifier dimanche = 0 en dimanche = 7
+   if(jourSemaine == 0){
+      jourSemaine = 7;
+   }
+
+   return jourSemaine;
+}

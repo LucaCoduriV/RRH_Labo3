@@ -14,4 +14,8 @@ void moisAnneeCorrect( unsigned& mois,unsigned& annee );
 void saisirDates( unsigned& moisDebut, unsigned& anneeDebut, unsigned&
 moisFin, unsigned& anneeFin );
 void afficherMoisAnnee( const unsigned& jourDebut, const unsigned& nombreJours );
+void moisAnneeCorrect(int& mois,int& annee);
+void saisirDates(int& moisDebut, int& anneeDebut, int& moisFin, int& anneeFin);
+unsigned jsemaineDT(const unsigned& jour, const unsigned& mois, const unsigned&
+annee);
 #endif //LABO_3_FONCTIONS_H
