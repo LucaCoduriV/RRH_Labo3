@@ -8,7 +8,6 @@ Remarque(s) : <à compléter>
 Compilateur : Mingw-w64 g++ 8.1.0
 -----------------------------------------------------------------------------------
 */
-#include <cstdlib>
 #include <iostream>
 #include "fonctions.h"
 #include <limits>
@@ -36,7 +35,9 @@ void saisirDates( unsigned& moisDebut, unsigned& anneeDebut, unsigned& moisFin,
    cout << "Entrez la date de fin [1 - 12 1900 - 2100] : ";
    moisAnneeCorrect(moisFin, anneeFin);
 }
-void afficherMoisAnnee( const unsigned& jourDebut, const unsigned& nombreJours ) {
+void afficherMoisAnnee( const unsigned& jourDebut, const unsigned& nombreJours, unsigned int mois, unsigned int annee ) {
+   cout << moisEnLitteral(mois) << " " << annee << endl << endl;
+
    unsigned nombreEspaces = jourDebut - 1;
    cout << " L  M  M  J  V  S  D" << endl;
    for ( int i = 1; i <= nombreJours + jourDebut - 1; ++i ) {
