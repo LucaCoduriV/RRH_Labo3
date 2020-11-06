@@ -8,6 +8,7 @@ Remarque(s) : <à compléter>
 Compilateur : Mingw-w64 g++ 8.1.0
 -----------------------------------------------------------------------------------
 */
+using namespace std;
 #ifndef LABO_3_FONCTIONS_H
 #define LABO_3_FONCTIONS_H
 void moisAnneeCorrect( unsigned& mois,unsigned& annee );
@@ -18,4 +19,9 @@ void moisAnneeCorrect(int& mois,int& annee);
 void saisirDates(int& moisDebut, int& anneeDebut, int& moisFin, int& anneeFin);
 unsigned jsemaineDT(const unsigned& jour, const unsigned& mois, const unsigned&
 annee);
+void saisieMoisAnnee(unsigned int& mois, unsigned int& annee);
+unsigned int nbreJoursMois(unsigned int mois, unsigned annee);
+bool estBissextile(unsigned int annee);
+void affichagePreambuleCalendrier(unsigned int mois, unsigned int annee);
+string moisEnLitteral(unsigned int);
 #endif //LABO_3_FONCTIONS_H

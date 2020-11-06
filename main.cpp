@@ -17,5 +17,13 @@ int main() {
    unsigned a = 7;
    unsigned b = 30;
    afficherMoisAnnee(a,b);
+
+   unsigned int moisDebut, anneeDebut, moisFin, anneeFin;
+
+   cout << "Entrez la date de debut [mm(1-12) aaaa(1900-2100] : ";
+   saisieMoisAnnee(moisDebut, anneeDebut);
+   cout << "Entrez la date de fin [mm(1-12) aaaa(1900-2100] : ";
+   saisieMoisAnnee(moisFin, anneeFin);
+
    return EXIT_SUCCESS;
 }

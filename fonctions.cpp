@@ -14,6 +14,10 @@ Compilateur : Mingw-w64 g++ 8.1.0
 #include <limits>
 #include <iomanip>
 using namespace std;
+
+enum class Mois {JANVIER= 1, FEVRIER, MARS, AVRIL, MAI, JUIN,JUILLET, AOUT,
+   SEPTEMBRE, OCTOBRE, NOVEMBRE, DECEMBRE};
+
 void moisAnneeCorrect( unsigned& mois,unsigned& annee ) {
    bool saisieOK;
    do {
@@ -73,4 +77,56 @@ annee)
    }
 
    return jourSemaine;
+}
+bool estBissextile(unsigned int annee){
+   return (annee % 400 == 0) || (annee % 4 == 0 && annee % 100 != 0);
+}
+
+unsigned int nbreJoursMois(unsigned int mois, unsigned annee){
+   switch ((Mois) mois) {
+      case Mois::AVRIL:
+      case Mois::JUIN:
+      case Mois::SEPTEMBRE:
+      case Mois::NOVEMBRE:
+         return 30;
+      case Mois::FEVRIER :
+         return estBissextile(annee) ?  29 : 28;
+      default:
+         return 31;
+   }
+}
+
+void affichagePreambuleCalendrier(unsigned int mois, unsigned int annee) {
+
+   cout << moisEnLitteral(mois) << " " << annee << endl << endl
+        << " L  M  M  J  V  S  D";
+}
+
+string moisEnLitteral(unsigned int mois) {
+   switch ((Mois) mois) {
+      case Mois::JANVIER:
+         return "Janvier";
+      case Mois::FEVRIER:
+         return "Fevrier";
+      case Mois::MARS:
+         return "Mars";
+      case Mois::AVRIL:
+         return "Avril";
+      case Mois::MAI:
+         return "Mai";
+      case Mois::JUIN:
+         return "Juin";
+      case Mois::JUILLET:
+         return "Juillet";
+      case Mois::AOUT:
+         return "Aout";
+      case Mois::SEPTEMBRE:
+         return "Septembre";
+      case Mois::OCTOBRE:
+         return "Octobre";
+      case Mois::NOVEMBRE:
+         return "Novembre";
+      case Mois::DECEMBRE:
+         return "Decembre";
+   }
 }
