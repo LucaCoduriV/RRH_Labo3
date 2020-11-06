@@ -23,7 +23,8 @@ void moisAnneeCorrect( unsigned& mois,unsigned& annee ) {
       if (!(saisieOK = cin >> mois >> annee && mois <= 12 && mois >= 1
                        && annee >= 1900 && annee <= 2100))
       {
-         cin.clear(), cout << "Date non valide, veuillez SVP recommencer." << endl;
+         cin.clear();
+         cout << "Date non valide, veuillez SVP recommencer." << endl;
       }
       cin.ignore(numeric_limits<streamsize>::max(), '\n');
    } while (!saisieOK);
@@ -32,10 +33,10 @@ void saisirDates( unsigned& moisDebut, unsigned& anneeDebut, unsigned& moisFin,
                   unsigned& anneeFin ) {
    cout << "Entrez la date de debut [1 - 12 1900 - 2100] : ";
    moisAnneeCorrect(moisDebut, anneeDebut);
-   cout << "Entrez la date de fin [1 - 12 1900 - 2100] : ";
+   cout << endl << "Entrez la date de fin [1 - 12 1900 - 2100] : ";
    moisAnneeCorrect(moisFin, anneeFin);
 }
-void afficherMoisAnnee( const unsigned& jourDebut, const unsigned& nombreJours, unsigned int mois, unsigned int annee ) {
+void afficherMoisAnnee( const unsigned& jourDebut, const unsigned& nombreJours, unsigned mois, unsigned annee ) {
    cout << endl << moisEnLitteral(mois) << " " << annee << endl << endl;
 
    unsigned nombreEspaces = jourDebut - 1;
@@ -80,11 +81,11 @@ annee)
 
    return jourSemaine;
 }
-bool estBissextile(unsigned int annee){
+bool estBissextile(unsigned annee){
    return (annee % 400 == 0) || (annee % 4 == 0 && annee % 100 != 0);
 }
 
-unsigned int nbreJoursMois(unsigned int mois, unsigned annee){
+unsigned nbreJoursMois(unsigned mois, unsigned annee){
    switch ((Mois) mois) {
       case Mois::AVRIL:
       case Mois::JUIN:
@@ -98,7 +99,7 @@ unsigned int nbreJoursMois(unsigned int mois, unsigned annee){
    }
 }
 
-string moisEnLitteral(unsigned int mois) {
+string moisEnLitteral(unsigned mois) {
    switch ((Mois) mois) {
       case Mois::JANVIER:
          return "Janvier";
