@@ -15,7 +15,7 @@ using namespace std;
 
 
 const string NOMSJOURS[] =
-   {"Dimanche","Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi"};
+   {"dtc","Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi","Dimanche"};
 /**
 Nom d’un jour de semaine en toutes lettres
 @param[in] jsem - numéro jour de semaine dans (0=dimanche,...,6=samedi)
@@ -33,7 +33,7 @@ int main() {
    //moisAnneeCorrect(mois, annee);
 
 
-   cout << nomJSemaine(jsemaineDT(6,11,2020));
+   cout << nomJSemaine(jsemaineDT(8,11,2020));
    return EXIT_SUCCESS;
 }
 

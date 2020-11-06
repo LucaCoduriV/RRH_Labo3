@@ -48,5 +48,12 @@ annee)
    int n = a % 100;
    int f = jour + n + 5 * s + n / 4 + s / 4 + (13 * m - 1) / 5;
 
-   return (f % 7);
+   unsigned jourSemaine = (f % 7);
+
+   //Permet de modifier dimanche = 0 en dimanche = 7
+   if(jourSemaine == 0){
+      jourSemaine = 7;
+   }
+
+   return jourSemaine;
 }
