@@ -30,3 +30,23 @@ void saisirDates(int& moisDebut, int& anneeDebut, int& moisFin, int& anneeFin) {
    cout << "Entrez la date de fin [1 - 12 1900 - 2100] : ";
    moisAnneeCorrect(moisFin, anneeFin);
 }
+unsigned jsemaineDT(const unsigned& jour, const unsigned& mois, const unsigned&
+annee)
+{
+   int m, a;
+   if (mois >= 3)
+   {
+      m = mois - 2;
+      a = annee;
+   }
+   else
+   {
+      m = mois + 10;
+      a = annee - 1;
+   }
+   int s = a / 100;
+   int n = a % 100;
+   int f = jour + n + 5 * s + n / 4 + s / 4 + (13 * m - 1) / 5;
+
+   return (f % 7);
+}
