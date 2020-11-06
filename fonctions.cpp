@@ -98,9 +98,7 @@ unsigned int nbreJoursMois(unsigned int mois, unsigned annee){
 }
 
 void affichagePreambuleCalendrier(unsigned int mois, unsigned int annee) {
-
-   cout << moisEnLitteral(mois) << " " << annee << endl << endl
-        << " L  M  M  J  V  S  D";
+   cout << moisEnLitteral(mois) << " " << annee << endl << endl;
 }
 
 string moisEnLitteral(unsigned int mois) {
@@ -129,5 +127,19 @@ string moisEnLitteral(unsigned int mois) {
          return "Novembre";
       case Mois::DECEMBRE:
          return "Decembre";
+   }
+}
+
+// OK
+void affichageDesCalendriers(unsigned moisDebut, unsigned anneeDebut, unsigned
+moisFin, unsigned anneeFin) {
+   while (anneeDebut < anneeFin || (anneeDebut == anneeFin && moisDebut <= moisFin)) {
+      // Afficher calendrier
+      if (moisDebut >= 12) {
+         moisDebut = 0;
+         ++anneeDebut;
+      } else {
+         ++moisDebut;
+      }
    }
 }
