@@ -50,8 +50,39 @@ unsigned int nbreJoursMois(unsigned int mois, unsigned annee){
    }
 }
 
-// En cours
+// OK
 void affichagePreambuleCalendrier(unsigned int mois, unsigned int annee) {
 
-   cout << mois << " " << annee;
+   cout << moisEnLitteral(mois) << " " << annee << endl << endl
+        << " L  M  M  J  V  S  D";
+}
+
+// OK
+string moisEnLitteral(unsigned int mois) {
+   switch ((Mois) mois) {
+      case Mois::JANVIER:
+         return "Janvier";
+      case Mois::FEVRIER:
+         return "Fevrier";
+      case Mois::MARS:
+         return "Mars";
+      case Mois::AVRIL:
+         return "Avril";
+      case Mois::MAI:
+         return "Mai";
+      case Mois::JUIN:
+         return "Juin";
+      case Mois::JUILLET:
+         return "Juillet";
+      case Mois::AOUT:
+         return "Aout";
+      case Mois::SEPTEMBRE:
+         return "Septembre";
+      case Mois::OCTOBRE:
+         return "Octobre";
+      case Mois::NOVEMBRE:
+         return "Novembre";
+      case Mois::DECEMBRE:
+         return "Decembre";
+   }
 }
