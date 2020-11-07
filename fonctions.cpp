@@ -41,6 +41,75 @@ bool saisieMoisAnneeCorrect(unsigned &mois, unsigned &annee) {
 
 /**
  *
+ * @param moisDebut
+ * @param anneeDebut
+ * @param moisFin
+ * @param anneeFin
+ */
+void afficherCalendriersIntervalle(unsigned moisDebut, unsigned anneeDebut, unsigned
+moisFin, unsigned anneeFin) {
+//   while (anneeDebut < anneeFin || (anneeDebut == anneeFin && moisDebut <=
+//   moisFin)) {
+//      unsigned jourSemaine = dateEnJourSemaine( 1, moisDebut, anneeDebut);
+//      unsigned nombreJours = nbreJoursMois(moisDebut, anneeDebut);
+//      afficherCalendrier( jourSemaine, nombreJours, moisDebut, anneeDebut );
+//
+//      if (moisDebut >= 12) {
+//         moisDebut = 1;
+//         ++anneeDebut;
+//      } else {
+//         ++moisDebut;
+//      }
+//   }
+
+   for (unsigned annee = anneeDebut; annee <= anneeFin; ++annee) {
+      for (unsigned mois = moisDebut; mois <= (annee == anneeFin ? moisFin : 12);
+           ++mois) {
+         unsigned short jourSemaine = dateEnJourSemaine(1, mois, annee);
+         unsigned nombreJours = nbreJoursMois(mois, annee);
+         afficherCalendrier(jourSemaine, nombreJours, mois, annee);
+      }
+      moisDebut = 0;
+   }
+}
+
+/**
+ * Formule Zeller source: https://en.wikipedia.org/wiki/Zeller%27s_congruence
+ * Cette fonction permet de déterminer le jour de la semaine d'une date. Ex:
+ * le 7 novembre 2020 vaut 6 (= samedi)
+ * @param jour
+ * @param mois
+ * @param annee
+ * @return le jour de la semaine (lundi = 1, ..., dimanche = 7)
+ */
+unsigned short dateEnJourSemaine(int jour, int mois, int annee) {
+   int m, a;
+
+   //établir le mois de mars à 1 et janvier et février à 11 et 12.
+   if (mois >= 3) {
+      m = (int) mois - 2;
+      a = (int) annee;
+   } else {
+      m = (int) mois + 10;
+      a = (int) annee - 1;
+   }
+   const int J = a / 100;
+   const int K = a % 100;
+   int h = (int) jour + K + 5 * J + K / 4 + J / 4 + (13 * m - 1) / 5;
+
+   unsigned short jourSemaine = (unsigned short)h % 7;
+
+   //Permet de modifier dimanche = 0 en dimanche = 7
+   if (jourSemaine == 0) {
+      jourSemaine = 7;
+   }
+
+   return jourSemaine;
+}
+
+
+/**
+ *
  * @param jourDebut
  * @param nombreJours
  * @param mois
@@ -50,7 +119,7 @@ void afficherCalendrier(unsigned short jourDebut, unsigned nombreJours,
                         unsigned mois, unsigned annee) {
    cout << endl << moisEnLitteral(mois) << " " << annee << endl << endl;
 
-   unsigned nombreEspaces = (unsigned)(jourDebut) - 1;
+   unsigned nombreEspaces = (unsigned) (jourDebut) - 1;
    cout << " L  M  M  J  V  S  D" << endl;
    for (unsigned i = 1; i <= nombreJours + jourDebut - 1; ++i) {
       if (nombreEspaces >= 1) {
@@ -69,36 +138,6 @@ void afficherCalendrier(unsigned short jourDebut, unsigned nombreJours,
    cout << endl;
 }
 
-/**
- * Formule Zeller
- *
- * @param jour
- * @param mois
- * @param annee
- * @return le jour de la semaine (lundi = 1, ..., dimanche = 7)
- */
-unsigned short dateEnJourSemaine(unsigned jour, unsigned mois, unsigned annee) {
-   int m, a;
-   if (mois >= 3) {
-      m = (int) mois - 2;
-      a = (int) annee;
-   } else {
-      m = (int) mois + 10;
-      a = (int) annee - 1;
-   }
-   int s = a / 100;
-   int n = a % 100;
-   int f = (int) jour + n + 5 * s + n / 4 + s / 4 + (13 * m - 1) / 5;
-
-   unsigned short jourSemaine = (unsigned short)f % 7;
-
-   //Permet de modifier dimanche = 0 en dimanche = 7
-   if (jourSemaine == 0) {
-      jourSemaine = 7;
-   }
-
-   return jourSemaine;
-}
 
 /**
  *
@@ -165,36 +204,3 @@ string moisEnLitteral(unsigned mois) {
    }
 }
 
-/**
- *
- * @param moisDebut
- * @param anneeDebut
- * @param moisFin
- * @param anneeFin
- */
-void afficherCalendriersIntervalle(unsigned moisDebut, unsigned anneeDebut, unsigned
-moisFin, unsigned anneeFin) {
-//   while (anneeDebut < anneeFin || (anneeDebut == anneeFin && moisDebut <=
-//   moisFin)) {
-//      unsigned jourSemaine = dateEnJourSemaine( 1, moisDebut, anneeDebut);
-//      unsigned nombreJours = nbreJoursMois(moisDebut, anneeDebut);
-//      afficherCalendrier( jourSemaine, nombreJours, moisDebut, anneeDebut );
-//
-//      if (moisDebut >= 12) {
-//         moisDebut = 1;
-//         ++anneeDebut;
-//      } else {
-//         ++moisDebut;
-//      }
-//   }
-
-   for (unsigned annee = anneeDebut; annee <= anneeFin; ++annee) {
-      for (unsigned mois = moisDebut; mois <= (annee == anneeFin ? moisFin : 12);
-           ++mois) {
-         unsigned short jourSemaine = dateEnJourSemaine(1, mois, annee);
-         unsigned nombreJours = nbreJoursMois(mois, annee);
-         afficherCalendrier(jourSemaine, nombreJours, mois, annee);
-      }
-      moisDebut = 0;
-   }
-}
