@@ -29,7 +29,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9c5c2ca8-e9d2-4938-93c3-c313a1f610c7" name="Default Changelist" comment="Correction des warnings !">
+    <list default="true" id="9c5c2ca8-e9d2-4938-93c3-c313a1f610c7" name="Default Changelist" comment="Modification formule zeller">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fonctions.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/fonctions.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fonctions.h" beforeDir="false" afterPath="$PROJECT_DIR$/fonctions.h" afterDir="false" />
@@ -93,7 +93,7 @@
       <workItem from="1604581371270" duration="209000" />
       <workItem from="1604761077938" duration="27000" />
       <workItem from="1604766678031" duration="1738000" />
-      <workItem from="1604771415328" duration="14895000" />
+      <workItem from="1604771415328" duration="15122000" />
     </task>
     <task id="LOCAL-00001" summary="Formule zeller">
       <created>1604668566414</created>
@@ -158,7 +158,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604785665888</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Modification formule zeller">
+      <created>1604789472628</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1604789472628</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -183,7 +190,8 @@
     <MESSAGE value="Fonctions mises dans l'ordre dans le main !" />
     <MESSAGE value="Optimisation du code !!" />
     <MESSAGE value="Correction des warnings !" />
-    <option name="LAST_COMMIT_MESSAGE" value="Correction des warnings !" />
+    <MESSAGE value="Modification formule zeller" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modification formule zeller" />
   </component>
   <component name="WindowStateProjectService">
     <state x="184" y="86" key="DiffContextDialog" timestamp="1604671729005">
@@ -226,10 +234,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="165" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604783242499" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1604785672925">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1604789478389">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604785672925" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604789478389" />
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604673410480">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -82,7 +82,7 @@ moisFin, unsigned anneeFin) {
  * @param annee
  * @return le jour de la semaine (lundi = 1, ..., dimanche = 7)
  */
-unsigned short dateEnJourSemaine(int jour, int mois, int annee) {
+unsigned short dateEnJourSemaine(unsigned jour, unsigned mois, unsigned annee) {
    int m, a;
 
    //établir le mois de mars à 1 et janvier et février à 11 et 12.

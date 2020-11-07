@@ -21,7 +21,7 @@ moisFin, unsigned &anneeFin);
 void afficherCalendrier(unsigned short jourDebut, unsigned nombreJours, unsigned
 mois, unsigned annee);
 
-unsigned short dateEnJourSemaine(int jour, int mois, int annee);
+unsigned short dateEnJourSemaine(unsigned jour, unsigned mois, unsigned annee);
 
 void saisieMoisAnnee(unsigned &mois, unsigned &annee);
 
