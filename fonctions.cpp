@@ -9,83 +9,113 @@ Compilateur : Mingw-w64 g++ 8.1.0
 -----------------------------------------------------------------------------------
 */
 #include <iostream>
-#include "fonctions.h"
 #include <limits>
 #include <iomanip>
+#include "fonctions.h"
+
 using namespace std;
 
-enum class Mois {JANVIER= 1, FEVRIER, MARS, AVRIL, MAI, JUIN,JUILLET, AOUT,
-   SEPTEMBRE, OCTOBRE, NOVEMBRE, DECEMBRE};
+enum class Mois {
+   JANVIER = 1, FEVRIER, MARS, AVRIL, MAI, JUIN, JUILLET, AOUT,
+   SEPTEMBRE, OCTOBRE, NOVEMBRE, DECEMBRE
+};
 
-void moisAnneeCorrect( unsigned& mois,unsigned& annee ) {
+/**
+ *
+ * @param mois
+ * @param annee
+ * @return
+ */
+bool saisieMoisAnneeCorrect(unsigned &mois, unsigned &annee) {
    bool saisieOK;
-   do {
-      if (!(saisieOK = cin >> mois >> annee && mois <= 12 && mois >= 1
-                       && annee >= 1900 && annee <= 2100))
-      {
-         cin.clear();
-         cout << "Date non valide, veuillez SVP recommencer." << endl;
-      }
-      cin.ignore(numeric_limits<streamsize>::max(), '\n');
-   } while (!saisieOK);
+
+   if (!(saisieOK = cin >> mois >> annee && mois <= 12 && mois >= 1
+                    && annee >= ANNEE_MIN && annee <= ANNEE_MAX)) {
+      cin.clear();
+      cout << "Date non valide, veuillez SVP recommencer." << endl;
+   }
+   cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+   return saisieOK;
 }
-void saisirDates( unsigned& moisDebut, unsigned& anneeDebut, unsigned& moisFin,
-                  unsigned& anneeFin ) {
-   cout << "Entrez la date de debut [1 - 12 1900 - 2100] : ";
-   moisAnneeCorrect(moisDebut, anneeDebut);
-   cout << endl << "Entrez la date de fin [1 - 12 1900 - 2100] : ";
-   moisAnneeCorrect(moisFin, anneeFin);
-}
-void afficherMoisAnnee( const unsigned& jourDebut, const unsigned& nombreJours, unsigned mois, unsigned annee ) {
+
+/**
+ *
+ * @param jourDebut
+ * @param nombreJours
+ * @param mois
+ * @param annee
+ */
+void afficherCalendrier(const unsigned &jourDebut, const unsigned &nombreJours,
+                        unsigned mois, unsigned annee) {
    cout << endl << moisEnLitteral(mois) << " " << annee << endl << endl;
 
    unsigned nombreEspaces = jourDebut - 1;
    cout << " L  M  M  J  V  S  D" << endl;
-   for ( int i = 1; i <= nombreJours + jourDebut - 1; ++i ) {
-      if ( nombreEspaces >= 1 ) {
+   for (unsigned i = 1; i <= nombreJours + jourDebut - 1; ++i) {
+      if (nombreEspaces >= 1) {
          cout << setw(2) << " ";
          --nombreEspaces;
+      } else {
+         cout << setw(2) << i - jourDebut + 1;
       }
-      else {
-         cout << setw(2) << i - int(jourDebut) + 1;
+
+      if (i % 7 == 0) {
+         cout << endl;
+      } else {
+         cout << " ";
       }
-      if ( i % 7 == 0 ) { cout << "\n"; }
-      else { cout << " "; }
    }
    cout << endl;
 }
-unsigned jsemaineDT(const unsigned& jour, const unsigned& mois, const unsigned&
-annee)
-{
+
+/**
+ * Formule Zeller
+ *
+ * @param jour
+ * @param mois
+ * @param annee
+ * @return le jour de la semaine (lundi = 1, ..., dimanche = 7)
+ */
+unsigned dateEnJourSemaine(unsigned jour, unsigned mois, unsigned annee) {
    int m, a;
-   if (mois >= 3)
-   {
-      m = mois - 2;
-      a = annee;
-   }
-   else
-   {
-      m = mois + 10;
-      a = annee - 1;
+   if (mois >= 3) {
+      m = (int)mois - 2;
+      a = (int)annee;
+   } else {
+      m = (int)mois + 10;
+      a = (int)annee - 1;
    }
    int s = a / 100;
    int n = a % 100;
-   int f = jour + n + 5 * s + n / 4 + s / 4 + (13 * m - 1) / 5;
+   int f = (int)jour + n + 5 * s + n / 4 + s / 4 + (13 * m - 1) / 5;
 
-   unsigned jourSemaine = (f % 7);
+   unsigned jourSemaine = (unsigned)(f % 7);
 
    //Permet de modifier dimanche = 0 en dimanche = 7
-   if(jourSemaine == 0){
+   if (jourSemaine == 0) {
       jourSemaine = 7;
    }
 
    return jourSemaine;
 }
-bool estBissextile(unsigned annee){
+
+/**
+ *
+ * @param annee
+ * @return
+ */
+bool estBissextile(unsigned annee) {
    return (annee % 400 == 0) || (annee % 4 == 0 && annee % 100 != 0);
 }
 
-unsigned nbreJoursMois(unsigned mois, unsigned annee){
+/**
+ *
+ * @param mois
+ * @param annee
+ * @return
+ */
+unsigned nbreJoursMois(unsigned mois, unsigned annee) {
    switch ((Mois) mois) {
       case Mois::AVRIL:
       case Mois::JUIN:
@@ -93,12 +123,17 @@ unsigned nbreJoursMois(unsigned mois, unsigned annee){
       case Mois::NOVEMBRE:
          return 30;
       case Mois::FEVRIER :
-         return estBissextile(annee) ?  29 : 28;
+         return estBissextile(annee) ? 29 : 28;
       default:
          return 31;
    }
 }
 
+/**
+ *
+ * @param mois
+ * @return
+ */
 string moisEnLitteral(unsigned mois) {
    switch ((Mois) mois) {
       case Mois::JANVIER:
@@ -125,22 +160,41 @@ string moisEnLitteral(unsigned mois) {
          return "Novembre";
       case Mois::DECEMBRE:
          return "Decembre";
+      default:
+         return "Mois non existant.";
    }
 }
 
-// OK
+/**
+ *
+ * @param moisDebut
+ * @param anneeDebut
+ * @param moisFin
+ * @param anneeFin
+ */
 void affichageDesCalendriers(unsigned moisDebut, unsigned anneeDebut, unsigned
 moisFin, unsigned anneeFin) {
-   while (anneeDebut < anneeFin || (anneeDebut == anneeFin && moisDebut <= moisFin)) {
-      unsigned jourSemaine = jsemaineDT( 1, moisDebut, anneeDebut);
-      unsigned nombreJours = nbreJoursMois(moisDebut, anneeDebut);
+//   while (anneeDebut < anneeFin || (anneeDebut == anneeFin && moisDebut <=
+//   moisFin)) {
+//      unsigned jourSemaine = dateEnJourSemaine( 1, moisDebut, anneeDebut);
+//      unsigned nombreJours = nbreJoursMois(moisDebut, anneeDebut);
+//      afficherCalendrier( jourSemaine, nombreJours, moisDebut, anneeDebut );
+//
+//      if (moisDebut >= 12) {
+//         moisDebut = 1;
+//         ++anneeDebut;
+//      } else {
+//         ++moisDebut;
+//      }
+//   }
 
-      afficherMoisAnnee( jourSemaine, nombreJours, moisDebut, anneeDebut );
-      if (moisDebut >= 12) {
-         moisDebut = 1;
-         ++anneeDebut;
-      } else {
-         ++moisDebut;
+   for (unsigned annee = anneeDebut; annee <= anneeFin; ++annee) {
+      for (unsigned mois = moisDebut; mois <= (annee == anneeFin ? moisFin : 12);
+      ++mois) {
+         unsigned jourSemaine = dateEnJourSemaine(1, mois, annee);
+         unsigned nombreJours = nbreJoursMois(mois, annee);
+         afficherCalendrier(jourSemaine, nombreJours, mois, annee);
       }
+      moisDebut = 0;
    }
 }
