@@ -46,11 +46,11 @@ bool saisieMoisAnneeCorrect(unsigned &mois, unsigned &annee) {
  * @param mois
  * @param annee
  */
-void afficherCalendrier(const unsigned &jourDebut, const unsigned &nombreJours,
+void afficherCalendrier(unsigned short jourDebut, unsigned nombreJours,
                         unsigned mois, unsigned annee) {
    cout << endl << moisEnLitteral(mois) << " " << annee << endl << endl;
 
-   unsigned nombreEspaces = jourDebut - 1;
+   unsigned nombreEspaces = (unsigned)(jourDebut) - 1;
    cout << " L  M  M  J  V  S  D" << endl;
    for (unsigned i = 1; i <= nombreJours + jourDebut - 1; ++i) {
       if (nombreEspaces >= 1) {
@@ -77,20 +77,20 @@ void afficherCalendrier(const unsigned &jourDebut, const unsigned &nombreJours,
  * @param annee
  * @return le jour de la semaine (lundi = 1, ..., dimanche = 7)
  */
-unsigned dateEnJourSemaine(unsigned jour, unsigned mois, unsigned annee) {
+unsigned short dateEnJourSemaine(unsigned jour, unsigned mois, unsigned annee) {
    int m, a;
    if (mois >= 3) {
-      m = (int)mois - 2;
-      a = (int)annee;
+      m = (int) mois - 2;
+      a = (int) annee;
    } else {
-      m = (int)mois + 10;
-      a = (int)annee - 1;
+      m = (int) mois + 10;
+      a = (int) annee - 1;
    }
    int s = a / 100;
    int n = a % 100;
-   int f = (int)jour + n + 5 * s + n / 4 + s / 4 + (13 * m - 1) / 5;
+   int f = (int) jour + n + 5 * s + n / 4 + s / 4 + (13 * m - 1) / 5;
 
-   unsigned jourSemaine = (unsigned)(f % 7);
+   unsigned short jourSemaine = (unsigned short)f % 7;
 
    //Permet de modifier dimanche = 0 en dimanche = 7
    if (jourSemaine == 0) {
@@ -172,7 +172,7 @@ string moisEnLitteral(unsigned mois) {
  * @param moisFin
  * @param anneeFin
  */
-void affichageDesCalendriers(unsigned moisDebut, unsigned anneeDebut, unsigned
+void afficherCalendriersIntervalle(unsigned moisDebut, unsigned anneeDebut, unsigned
 moisFin, unsigned anneeFin) {
 //   while (anneeDebut < anneeFin || (anneeDebut == anneeFin && moisDebut <=
 //   moisFin)) {
@@ -190,8 +190,8 @@ moisFin, unsigned anneeFin) {
 
    for (unsigned annee = anneeDebut; annee <= anneeFin; ++annee) {
       for (unsigned mois = moisDebut; mois <= (annee == anneeFin ? moisFin : 12);
-      ++mois) {
-         unsigned jourSemaine = dateEnJourSemaine(1, mois, annee);
+           ++mois) {
+         unsigned short jourSemaine = dateEnJourSemaine(1, mois, annee);
          unsigned nombreJours = nbreJoursMois(mois, annee);
          afficherCalendrier(jourSemaine, nombreJours, mois, annee);
       }

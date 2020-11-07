@@ -31,7 +31,7 @@ int main() {
          continue;
       }
 
-      affichageDesCalendriers(moisDebut, anneeDebut, moisFin,  anneeFin);
+      afficherCalendriersIntervalle(moisDebut, anneeDebut, moisFin, anneeFin);
 
       char reponse;
       bool saisieOK;

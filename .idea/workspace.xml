@@ -29,7 +29,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9c5c2ca8-e9d2-4938-93c3-c313a1f610c7" name="Default Changelist" comment="Fonctions mises dans l'ordre dans le main !">
+    <list default="true" id="9c5c2ca8-e9d2-4938-93c3-c313a1f610c7" name="Default Changelist" comment="Optimisation du code !!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fonctions.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/fonctions.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fonctions.h" beforeDir="false" afterPath="$PROJECT_DIR$/fonctions.h" afterDir="false" />
@@ -94,7 +94,7 @@
       <workItem from="1604581371270" duration="209000" />
       <workItem from="1604761077938" duration="27000" />
       <workItem from="1604766678031" duration="1738000" />
-      <workItem from="1604771415328" duration="9459000" />
+      <workItem from="1604771415328" duration="11121000" />
     </task>
     <task id="LOCAL-00001" summary="Formule zeller">
       <created>1604668566414</created>
@@ -145,7 +145,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604675220096</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Optimisation du code !!">
+      <created>1604783998929</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1604783998929</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -168,7 +175,8 @@
     <MESSAGE value="Correction formule zeller pour qu'il renvoie 7 au lieu de 0" />
     <MESSAGE value="ok" />
     <MESSAGE value="Fonctions mises dans l'ordre dans le main !" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fonctions mises dans l'ordre dans le main !" />
+    <MESSAGE value="Optimisation du code !!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Optimisation du code !!" />
   </component>
   <component name="WindowStateProjectService">
     <state x="184" y="86" key="DiffContextDialog" timestamp="1604671729005">
@@ -183,22 +191,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="779" y="225" key="Github.UntrackedFilesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604581396167" />
-    <state width="1877" height="333" key="GridCell.Tab.0.bottom" timestamp="1604783316035">
+    <state width="1877" height="333" key="GridCell.Tab.0.bottom" timestamp="1604785591967">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="333" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604783316035" />
-    <state width="1877" height="333" key="GridCell.Tab.0.center" timestamp="1604783316035">
+    <state width="1877" height="333" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604785591967" />
+    <state width="1877" height="333" key="GridCell.Tab.0.center" timestamp="1604785591967">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="333" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604783316035" />
-    <state width="1877" height="333" key="GridCell.Tab.0.left" timestamp="1604783316035">
+    <state width="1877" height="333" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604785591967" />
+    <state width="1877" height="333" key="GridCell.Tab.0.left" timestamp="1604785591966">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="333" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604783316035" />
-    <state width="1877" height="333" key="GridCell.Tab.0.right" timestamp="1604783316035">
+    <state width="1877" height="333" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604785591966" />
+    <state width="1877" height="333" key="GridCell.Tab.0.right" timestamp="1604785591967">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="333" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604783316035" />
+    <state width="1877" height="333" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604785591967" />
     <state x="212" y="92" key="MergeDialog" timestamp="1604673621115">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -211,10 +219,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="165" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604783242499" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1604675223104">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1604784021271">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604675223104" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604784021271" />
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604673410480">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
