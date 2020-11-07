@@ -69,7 +69,7 @@ moisFin, unsigned anneeFin) {
          unsigned nombreJours = nbreJoursMois(mois, annee);
          afficherCalendrier(jourSemaine, nombreJours, mois, annee);
       }
-      moisDebut = 0;
+      moisDebut = 1;
    }
 }
 
@@ -83,19 +83,19 @@ moisFin, unsigned anneeFin) {
  * @return le jour de la semaine (lundi = 1, ..., dimanche = 7)
  */
 unsigned short dateEnJourSemaine(unsigned jour, unsigned mois, unsigned annee) {
-   int m, a;
+   unsigned m, a;
 
    //établir le mois de mars à 1 et janvier et février à 11 et 12.
    if (mois >= 3) {
-      m = (int) mois - 2;
-      a = (int) annee;
+      m = mois - 2;
+      a = annee;
    } else {
-      m = (int) mois + 10;
-      a = (int) annee - 1;
+      m = mois + 10;
+      a = annee - 1;
    }
-   const int J = a / 100;
-   const int K = a % 100;
-   int h = (int) jour + K + 5 * J + K / 4 + J / 4 + (13 * m - 1) / 5;
+   const unsigned J = a / 100;
+   const unsigned K = a % 100;
+   unsigned h =  jour + K + 5 * J + K / 4 + J / 4 + (13 * m - 1) / 5;
 
    unsigned short jourSemaine = (unsigned short)h % 7;
 
