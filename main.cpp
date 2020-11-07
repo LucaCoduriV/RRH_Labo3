@@ -8,6 +8,15 @@ Remarque(s) : <à compléter>
 Compilateur : Mingw-w64 g++ 8.1.0
 -----------------------------------------------------------------------------------
 */
+//todo faire les asserts
+//todo afficherCalendriersIntervalle regarder ce qui est le mieux.
+//todo faire les commentaires
+//todo checker les limites du programme
+//todo faut-il faire une fonction pour la saisie
+//todo renommer fichier fonctions.h et .cpp
+//todo verifier la check list
+
+
 #include <cstdlib>
 #include <iostream>
 #include "fonctions.h"
