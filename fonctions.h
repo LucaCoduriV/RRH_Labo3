@@ -15,24 +15,18 @@ const unsigned ANNEE_MIN = 1900, ANNEE_MAX = 2100;
 
 bool saisieMoisAnneeCorrect(unsigned &mois, unsigned &annee);
 
-void saisirDates(unsigned &moisDebut, unsigned &anneeDebut, unsigned &
-moisFin, unsigned &anneeFin);
+void afficherCalendriersIntervalle(unsigned moisDebut, unsigned anneeDebut, unsigned
+moisFin, unsigned anneeFin);
 
-void afficherCalendrier(unsigned short jourDebut, unsigned nombreJours, unsigned
-mois, unsigned annee);
+void afficherCalendrier(unsigned mois, unsigned annee);
 
 unsigned short dateEnJourSemaine(unsigned jour, unsigned mois, unsigned annee);
-
-void saisieMoisAnnee(unsigned &mois, unsigned &annee);
 
 unsigned nbreJoursMois(unsigned mois, unsigned annee);
 
 bool estBissextile(unsigned annee);
 
 string moisEnLitteral(unsigned);
-
-void afficherCalendriersIntervalle(unsigned moisDebut, unsigned anneeDebut, unsigned
-moisFin, unsigned anneeFin);
 
 bool jourCorrect(unsigned jour);
 
@@ -42,5 +36,7 @@ bool anneeCorrecte(unsigned annee);
 
 bool jourSemaineCorrect(unsigned short jourSemaine);
 
+bool dateDebutEstAnterieure(unsigned moisDebut, unsigned anneeDebut, unsigned
+moisFin, unsigned anneeFin);
 
 #endif //LABO_3_FONCTIONS_H

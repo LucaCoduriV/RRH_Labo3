@@ -11,7 +11,7 @@ Compilateur : Mingw-w64 g++ 8.1.0
 #include <iostream>
 #include <limits>
 #include <iomanip>
-#include <cassert>;
+#include <cassert>
 #include "fonctions.h"
 
 using namespace std;
@@ -22,10 +22,13 @@ enum class Mois {
 };
 
 /**
+ * Vérifie le type de la saisie utilisateur et si les paramètres appartiennent
+ * bien à l'intervalle défini et, s'il n'y a pas d'erreurs, attribue par référence
+ * les valeurs entrées par l'utilisateur aux variables entrées en paramètres.
  *
- * @param mois
- * @param annee
- * @return
+ * @param mois [1 - 12]
+ * @param annee [ANNEE_MIN - ANNEE_MAX]
+ * @return 1 (true) s'il n'y a pas d'erreurs, 0 (false) s'il y a des erreurs
  */
 bool saisieMoisAnneeCorrect(unsigned &mois, unsigned &annee) {
    bool saisieOK;
@@ -41,16 +44,20 @@ bool saisieMoisAnneeCorrect(unsigned &mois, unsigned &annee) {
 }
 
 /**
+ * Affiche tous les calendriers appartenant à l'intervalle entré par paramètres.
  *
- * @param moisDebut
- * @param anneeDebut
- * @param moisFin
- * @param anneeFin
+ * @param moisDebut [1 - 12]
+ * @param anneeDebut [ANNEE_MIN - ANNEE_MAX]
+ * @param moisFin [1 - 12]
+ * @param anneeFin [ANNEE_MIN - ANNEE_MAX]
  */
 void afficherCalendriersIntervalle(unsigned moisDebut, unsigned anneeDebut, unsigned
 moisFin, unsigned anneeFin) {
    assert(moisCorrect(moisDebut) && moisCorrect(moisFin) && anneeCorrecte
-   (anneeDebut) && anneeCorrecte(anneeFin));
+   (anneeDebut) && anneeCorrecte(anneeFin) && dateDebutEstAnterieure(moisDebut,
+                                                                     anneeDebut,
+                                                                     moisFin,
+                                                                     anneeFin));
 //   while (anneeDebut < anneeFin || (anneeDebut == anneeFin && moisDebut <=
 //   moisFin)) {
 //      unsigned jourSemaine = dateEnJourSemaine( 1, moisDebut, anneeDebut);
@@ -68,28 +75,60 @@ moisFin, unsigned anneeFin) {
    for (unsigned annee = anneeDebut; annee <= anneeFin; ++annee) {
       for (unsigned mois = moisDebut; mois <= (annee == anneeFin ? moisFin : 12);
            ++mois) {
-         unsigned short jourSemaine = dateEnJourSemaine(1, mois, annee);
-         unsigned nombreJours = nbreJoursMois(mois, annee);
-         afficherCalendrier(jourSemaine, nombreJours, mois, annee);
+         afficherCalendrier(mois, annee);
       }
       moisDebut = 1;
    }
 }
 
 /**
- * Formule Zeller source: https://en.wikipedia.org/wiki/Zeller%27s_congruence
- * Cette fonction permet de déterminer le jour de la semaine d'une date. Ex:
- * le 7 novembre 2020 vaut 6 (= samedi)
- * @param jour
- * @param mois
- * @param annee
+ * Affiche le calendrier du mois de l'année entrés en paramètres.
+ *
+ * @param mois [1 - 12]
+ * @param annee [ANNEE_MIN - ANNEE_MAX]
+ */
+void afficherCalendrier(unsigned mois, unsigned annee) {
+   assert(moisCorrect(mois) && anneeCorrecte(annee));
+
+   cout << endl << moisEnLitteral(mois) << " " << annee << endl << endl;
+   unsigned jourSemaine = dateEnJourSemaine(1, mois, annee);
+   unsigned nbreJours = nbreJoursMois(mois, annee);
+   //TODO doit vraiment faire un assert du nombre jours et jour de la semaine ???
+   unsigned nbreEspaces = (unsigned) jourSemaine - 1;
+   cout << " L  M  M  J  V  S  D" << endl;
+   for (unsigned colonne = 1; colonne <= nbreJours + jourSemaine - 1; ++colonne) {
+      if (nbreEspaces >= 1) {
+         cout << setw(2) << " ";
+         --nbreEspaces;
+      } else {
+         cout << setw(2) << colonne - jourSemaine + 1;
+      }
+
+      if (colonne % 7 == 0) {
+         cout << endl;
+      } else {
+         cout << " ";
+      }
+   }
+   cout << endl;
+}
+
+/**
+ * Calcule le jour de la semaine correspondant à une date.
+ * Ex: le 7 novembre 2020 vaut 6 (= samedi)
+ * Reprend la formule Zeller.
+ * Source: https://en.wikipedia.org/wiki/Zeller%27s_congruence
+ *
+ * @param jour [1 - 31]
+ * @param mois [1 - 12]
+ * @param annee [ANNEE_MIN - ANNEE_MAX]
  * @return le jour de la semaine (lundi = 1, ..., dimanche = 7)
  */
 unsigned short dateEnJourSemaine(unsigned jour, unsigned mois, unsigned annee) {
    unsigned m, a;
    assert(jourCorrect(jour) && moisCorrect(mois) && anneeCorrecte(annee));
 
-   //établir le mois de mars à 1 et janvier et février à 11 et 12.
+   // Etablit le mois de mars = 1 et février = 12
    if (mois >= 3) {
       m = mois - 2;
       a = annee;
@@ -103,7 +142,7 @@ unsigned short dateEnJourSemaine(unsigned jour, unsigned mois, unsigned annee) {
 
    unsigned short jourSemaine = (unsigned short)h % 7;
 
-   //Permet de modifier dimanche = 0 en dimanche = 7
+   // Modifie dimanche = 0 en dimanche = 7
    if (jourSemaine == 0) {
       jourSemaine = 7;
    }
@@ -111,55 +150,12 @@ unsigned short dateEnJourSemaine(unsigned jour, unsigned mois, unsigned annee) {
    return jourSemaine;
 }
 
-
 /**
+ * Renvoie le nombre de jours présent dans le mois d'une année.
  *
- * @param jourDebut
- * @param nombreJours
- * @param mois
- * @param annee
- */
-void afficherCalendrier(unsigned short jourDebut, unsigned nombreJours,
-                        unsigned mois, unsigned annee) {
-   assert(jourSemaineCorrect(jourDebut) && jourCorrect(nombreJours) && moisCorrect
-   (mois) && anneeCorrecte(annee));
-   cout << endl << moisEnLitteral(mois) << " " << annee << endl << endl;
-
-   unsigned nombreEspaces = (unsigned) (jourDebut) - 1;
-   cout << " L  M  M  J  V  S  D" << endl;
-   for (unsigned i = 1; i <= nombreJours + jourDebut - 1; ++i) {
-      if (nombreEspaces >= 1) {
-         cout << setw(2) << " ";
-         --nombreEspaces;
-      } else {
-         cout << setw(2) << i - jourDebut + 1;
-      }
-
-      if (i % 7 == 0) {
-         cout << endl;
-      } else {
-         cout << " ";
-      }
-   }
-   cout << endl;
-}
-
-
-/**
- *
- * @param annee
- * @return
- */
-bool estBissextile(unsigned annee) {
-   assert(anneeCorrecte(annee));
-   return (annee % 400 == 0) || (annee % 4 == 0 && annee % 100 != 0);
-}
-
-/**
- *
- * @param mois
- * @param annee
- * @return
+ * @param mois [1 - 12]
+ * @param annee [ANNEE_MIN - ANNEE_MAX]
+ * @return le nombre de jours [28 - 30]
  */
 unsigned nbreJoursMois(unsigned mois, unsigned annee) {
    assert(moisCorrect(mois) && anneeCorrecte(annee));
@@ -178,9 +174,21 @@ unsigned nbreJoursMois(unsigned mois, unsigned annee) {
 }
 
 /**
+ * Détermine si l'année entrée en paramètre est bissextile.
  *
- * @param mois
- * @return
+ * @param annee [ANNEE_MIN - ANNEE_MAX]
+ * @return 1 (true) si l'année est bissextile, 0 (false) autrement
+ */
+bool estBissextile(unsigned annee) {
+   assert(anneeCorrecte(annee));
+   return (annee % 400 == 0) || (annee % 4 == 0 && annee % 100 != 0);
+}
+
+/**
+ * Renvoie le nom littéral du mois entré en paramètre.
+ *
+ * @param mois [1 -12]
+ * @return le mois en littéral
  */
 string moisEnLitteral(unsigned mois) {
    assert(moisCorrect(mois));
@@ -214,18 +222,56 @@ string moisEnLitteral(unsigned mois) {
    }
 }
 
+/**
+ * Vérifie que le jour appartiennent à l'intervalle [1 - 31].
+ *
+ * @param jour
+ * @return 1 (true) si la valeur appartient à l'intervalle, 0 (false) autrement
+ */
 bool jourCorrect(unsigned jour) {
    return jour >= 1 && jour <= 31;
 }
 
+/**
+ * Vérifie que le mois appartienne à l'intervalle [1 - 12].
+ *
+ * @param mois
+ * @return 1 (true) si la valeur appartient à l'intervalle, 0 (false) autrement
+ */
 bool moisCorrect(unsigned mois) {
    return mois >= 1 && mois <= 12;
 }
 
+/**
+ * Vérifie que l'année appartienne à l'intervalle [ANNEE_MIN - ANNEE_MAX].
+ *
+ * @param annee
+ * @return 1 (true) si la valeur appartient à l'intervalle, 0 (false) autrement
+ */
 bool anneeCorrecte(unsigned annee) {
    return annee >= ANNEE_MIN && annee <= ANNEE_MAX;
 }
 
+/**
+ * Vérifie que le jour de la semaine appartienne à l'intervalle [1 - 7]
+ *
+ * @param jourSemaine
+ * @return
+ */
 bool jourSemaineCorrect(unsigned short jourSemaine) {
    return jourSemaine >= 1 && jourSemaine <= 7;
+}
+
+/**
+ * Vérifie que la date de début soit antérieure à la date de fin.
+ *
+ * @param moisDebut [1 - 12]
+ * @param anneeDebut [ANNEE_MIN - ANNEE_MAX]
+ * @param moisFin [1 - 12]
+ * @param anneeFin [ANNEE_MIN - ANNEE_MAX]
+ * @return 1 (true) si la date de début est antérieure, 0 (false) autrement
+ */
+bool dateDebutEstAnterieure(unsigned moisDebut, unsigned anneeDebut, unsigned
+moisFin, unsigned anneeFin) {
+   return anneeDebut < anneeFin || (anneeDebut == anneeFin && moisDebut < moisFin);
 }

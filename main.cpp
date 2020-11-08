@@ -38,9 +38,9 @@ int main() {
          cout << endl << "Entrez la date de fin [1 - 12 1900 - 2100] : ";
       } while (!saisieMoisAnneeCorrect(moisFin, anneeFin));
 
-      if (anneeDebut > anneeFin || (anneeDebut == anneeFin && moisDebut > moisFin)) {
+      if (!dateDebutEstAnterieure(moisDebut, anneeDebut, moisFin, anneeFin)) {
          cout << endl << "La date de fin que vous avez entre est anterieure a la "
-                         "date de debut. Veuillez recommencer." << endl;
+                         "date de debut. Veuillez SVP recommencer." << endl;
          continue;
       }
 
