@@ -11,6 +11,7 @@ Compilateur : Mingw-w64 g++ 8.1.0
 #include <iostream>
 #include <limits>
 #include <iomanip>
+#include <cassert>;
 #include "fonctions.h"
 
 using namespace std;
@@ -29,10 +30,10 @@ enum class Mois {
 bool saisieMoisAnneeCorrect(unsigned &mois, unsigned &annee) {
    bool saisieOK;
 
-   if (!(saisieOK = cin >> mois >> annee && mois <= 12 && mois >= 1
-                    && annee >= ANNEE_MIN && annee <= ANNEE_MAX)) {
+   if (!(saisieOK = cin >> mois >> annee && moisCorrect(mois) && anneeCorrecte(annee)
+      )) {
       cin.clear();
-      cout << endl << "Date non valide, veuillez SVP recommencer." << endl;
+      cout << endl << "Date non valide. Veuillez SVP recommencer." << endl;
    }
    cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
@@ -48,6 +49,8 @@ bool saisieMoisAnneeCorrect(unsigned &mois, unsigned &annee) {
  */
 void afficherCalendriersIntervalle(unsigned moisDebut, unsigned anneeDebut, unsigned
 moisFin, unsigned anneeFin) {
+   assert(moisCorrect(moisDebut) && moisCorrect(moisFin) && anneeCorrecte
+   (anneeDebut) && anneeCorrecte(anneeFin));
 //   while (anneeDebut < anneeFin || (anneeDebut == anneeFin && moisDebut <=
 //   moisFin)) {
 //      unsigned jourSemaine = dateEnJourSemaine( 1, moisDebut, anneeDebut);
@@ -84,6 +87,7 @@ moisFin, unsigned anneeFin) {
  */
 unsigned short dateEnJourSemaine(unsigned jour, unsigned mois, unsigned annee) {
    unsigned m, a;
+   assert(jourCorrect(jour) && moisCorrect(mois) && anneeCorrecte(annee));
 
    //établir le mois de mars à 1 et janvier et février à 11 et 12.
    if (mois >= 3) {
@@ -117,6 +121,8 @@ unsigned short dateEnJourSemaine(unsigned jour, unsigned mois, unsigned annee) {
  */
 void afficherCalendrier(unsigned short jourDebut, unsigned nombreJours,
                         unsigned mois, unsigned annee) {
+   assert(jourSemaineCorrect(jourDebut) && jourCorrect(nombreJours) && moisCorrect
+   (mois) && anneeCorrecte(annee));
    cout << endl << moisEnLitteral(mois) << " " << annee << endl << endl;
 
    unsigned nombreEspaces = (unsigned) (jourDebut) - 1;
@@ -145,6 +151,7 @@ void afficherCalendrier(unsigned short jourDebut, unsigned nombreJours,
  * @return
  */
 bool estBissextile(unsigned annee) {
+   assert(anneeCorrecte(annee));
    return (annee % 400 == 0) || (annee % 4 == 0 && annee % 100 != 0);
 }
 
@@ -155,6 +162,8 @@ bool estBissextile(unsigned annee) {
  * @return
  */
 unsigned nbreJoursMois(unsigned mois, unsigned annee) {
+   assert(moisCorrect(mois) && anneeCorrecte(annee));
+
    switch ((Mois) mois) {
       case Mois::AVRIL:
       case Mois::JUIN:
@@ -174,6 +183,7 @@ unsigned nbreJoursMois(unsigned mois, unsigned annee) {
  * @return
  */
 string moisEnLitteral(unsigned mois) {
+   assert(moisCorrect(mois));
    switch ((Mois) mois) {
       case Mois::JANVIER:
          return "Janvier";
@@ -204,3 +214,18 @@ string moisEnLitteral(unsigned mois) {
    }
 }
 
+bool jourCorrect(unsigned jour) {
+   return jour >= 1 && jour <= 31;
+}
+
+bool moisCorrect(unsigned mois) {
+   return mois >= 1 && mois <= 12;
+}
+
+bool anneeCorrecte(unsigned annee) {
+   return annee >= ANNEE_MIN && annee <= ANNEE_MAX;
+}
+
+bool jourSemaineCorrect(unsigned short jourSemaine) {
+   return jourSemaine >= 1 && jourSemaine <= 7;
+}

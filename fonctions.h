@@ -34,5 +34,13 @@ string moisEnLitteral(unsigned);
 void afficherCalendriersIntervalle(unsigned moisDebut, unsigned anneeDebut, unsigned
 moisFin, unsigned anneeFin);
 
+bool jourCorrect(unsigned jour);
+
+bool moisCorrect(unsigned mois);
+
+bool anneeCorrecte(unsigned annee);
+
+bool jourSemaineCorrect(unsigned short jourSemaine);
+
 
 #endif //LABO_3_FONCTIONS_H

@@ -1,14 +1,18 @@
 /*
 -----------------------------------------------------------------------------------
 Nom du fichier : <nom du fichier>.<xxx> (xxx = h ou cpp)
-Auteur(s) : Tania Nunez
-Date creation : <jj.mm.aaaa>
-Description : <à compléter>
-Remarque(s) : <à compléter>
+Auteur(s) : Tania Nunez & Chloe Fontaine & Luca Coduri
+Date creation : 6.11.2020
+Description : Ce programme demande à l'utilisateur d'entrer une date de début et une
+date de fin dans la console. Il va ensuite fournir à l'utilisateur  l'ensemble des
+pages calendrier correspondant à l'intervalle date début – date fin.
+Remarque(s) : Dans le cadre de notre labo en PROG1, il nous est demandé que
+l'utilisateur ne puisse pas entrer une date inférieur à 1900 et supérieur à 2100.
+En revanche l'algorithme utilisé nous permet d'aller jusqu'au début du calendrier
+grégorien jusqu'en 9999.
 Compilateur : Mingw-w64 g++ 8.1.0
 -----------------------------------------------------------------------------------
 */
-//todo faire les asserts
 //todo afficherCalendriersIntervalle regarder ce qui est le mieux.
 //todo faire les commentaires
 //todo checker les limites du programme
@@ -45,7 +49,7 @@ int main() {
       char reponse;
       bool saisieOK;
       do {
-         cout << "voulez vous quitter le programme ? [o/n]";
+         cout << "Voulez-vous quitter le programme ? [o/n]";
 
          if (!(saisieOK = cin >> reponse && (reponse == 'o' || reponse == 'n'))) {
             cin.clear();
