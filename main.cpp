@@ -24,15 +24,15 @@ Compilateur : Mingw-w64 g++ 8.1.0
 using namespace std;
 
 int main() {
-   while(true){
+   while (true) {
       unsigned moisDebut, anneeDebut, moisFin, anneeFin;
-      do{
+      do {
          cout << "Entrez la date de debut [1 - 12 1900 - 2100] : ";
-      }while(!saisieMoisAnneeCorrect(moisDebut, anneeDebut));
+      } while (!saisieMoisAnneeCorrect(moisDebut, anneeDebut));
 
-      do{
+      do {
          cout << endl << "Entrez la date de fin [1 - 12 1900 - 2100] : ";
-      }while(!saisieMoisAnneeCorrect(moisFin, anneeFin));
+      } while (!saisieMoisAnneeCorrect(moisFin, anneeFin));
 
       if (anneeDebut > anneeFin || (anneeDebut == anneeFin && moisDebut > moisFin)) {
          cout << endl << "La date de fin que vous avez entre est anterieure a la "
@@ -47,14 +47,15 @@ int main() {
       do {
          cout << "voulez vous quitter le programme ? [o/n]";
 
-         if(!(saisieOK = cin >> reponse && (reponse == 'o' || reponse == 'n'))){
+         if (!(saisieOK = cin >> reponse && (reponse == 'o' || reponse == 'n'))) {
             cin.clear();
-            cout << "Votre reponse n'est pas valide!" << endl;
+            cout << endl << "Votre reponse n'est pas valide. Veuillez SVP "
+                            "recommencer." << endl;
          }
          cin.ignore(numeric_limits<streamsize>::max(), '\n');
       } while (!saisieOK);
 
-      if(reponse == 'o'){
+      if (reponse == 'o') {
          return EXIT_SUCCESS;
       }
    }

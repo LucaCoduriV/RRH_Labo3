@@ -32,7 +32,7 @@ bool saisieMoisAnneeCorrect(unsigned &mois, unsigned &annee) {
    if (!(saisieOK = cin >> mois >> annee && mois <= 12 && mois >= 1
                     && annee >= ANNEE_MIN && annee <= ANNEE_MAX)) {
       cin.clear();
-      cout << "Date non valide, veuillez SVP recommencer." << endl;
+      cout << endl << "Date non valide, veuillez SVP recommencer." << endl;
    }
    cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
