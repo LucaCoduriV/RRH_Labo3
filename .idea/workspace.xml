@@ -29,9 +29,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9c5c2ca8-e9d2-4938-93c3-c313a1f610c7" name="Default Changelist" comment="Correction de la connerie de luca">
+    <list default="true" id="9c5c2ca8-e9d2-4938-93c3-c313a1f610c7" name="Default Changelist" comment="Ajout de todos">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonctions.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/fonctions.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,19 +65,9 @@
     <property name="settings.editor.selected.configurable" value="CMakeSettings" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="RRH_Labo3" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="RRH_Labo3" TARGET_NAME="RRH_Labo3" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="RRH_Labo3" RUN_TARGET_NAME="RRH_Labo3">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
   </component>
@@ -92,7 +82,10 @@
       <workItem from="1604581371270" duration="209000" />
       <workItem from="1604761077938" duration="27000" />
       <workItem from="1604766678031" duration="1738000" />
-      <workItem from="1604771415328" duration="16028000" />
+      <workItem from="1604771415328" duration="16853000" />
+      <workItem from="1604858019249" duration="48000" />
+      <workItem from="1604859914143" duration="725000" />
+      <workItem from="1604866111197" duration="5115000" />
     </task>
     <task id="LOCAL-00001" summary="Formule zeller">
       <created>1604668566414</created>
@@ -178,7 +171,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604790002584</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Ajout de todos">
+      <created>1604790591428</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1604790591428</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -206,7 +206,8 @@
     <MESSAGE value="Modification formule zeller" />
     <MESSAGE value="Correction fonction zeller" />
     <MESSAGE value="Correction de la connerie de luca" />
-    <option name="LAST_COMMIT_MESSAGE" value="Correction de la connerie de luca" />
+    <MESSAGE value="Ajout de todos" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout de todos" />
   </component>
   <component name="WindowStateProjectService">
     <state x="184" y="86" key="DiffContextDialog" timestamp="1604671729005">
@@ -221,22 +222,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="779" y="225" key="Github.UntrackedFilesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604581396167" />
-    <state width="1877" height="336" key="GridCell.Tab.0.bottom" timestamp="1604789919759">
+    <state width="1877" height="336" key="GridCell.Tab.0.bottom" timestamp="1604791386110">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="336" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604789919759" />
-    <state width="1877" height="336" key="GridCell.Tab.0.center" timestamp="1604789919759">
+    <state width="1877" height="336" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604791386110" />
+    <state width="1877" height="336" key="GridCell.Tab.0.center" timestamp="1604791386110">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="336" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604789919759" />
-    <state width="1877" height="336" key="GridCell.Tab.0.left" timestamp="1604789919759">
+    <state width="1877" height="336" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604791386110" />
+    <state width="1877" height="336" key="GridCell.Tab.0.left" timestamp="1604791386110">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="336" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604789919759" />
-    <state width="1877" height="336" key="GridCell.Tab.0.right" timestamp="1604789919759">
+    <state width="1877" height="336" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604791386110" />
+    <state width="1877" height="336" key="GridCell.Tab.0.right" timestamp="1604791386110">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="336" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604789919759" />
+    <state width="1877" height="336" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604791386110" />
     <state x="212" y="92" key="MergeDialog" timestamp="1604673621115">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -249,10 +250,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="165" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604783242499" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1604790007856">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1604790595229">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604790007856" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604790595229" />
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604673410480">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

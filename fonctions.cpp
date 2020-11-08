@@ -156,9 +156,11 @@ bool estBissextile(unsigned annee) {
 }
 
 /**
- *
- * @param mois
- * @param annee
+ * Permet d'avoir le nombre de jour dans un mois selon l'année.
+ * @param mois se trouve dans l'intervalle 1-12. indique pour quel mois on veut
+ * connaitre le nombre de jour.
+ * @param annee se trouve dans l'intervalle ANNEE_MIN - ANNEE_MAX. Indique l'année
+ * dans laquelle se trouve le mois.
  * @return
  */
 unsigned nbreJoursMois(unsigned mois, unsigned annee) {
@@ -178,9 +180,9 @@ unsigned nbreJoursMois(unsigned mois, unsigned annee) {
 }
 
 /**
- *
- * @param mois
- * @return
+ * Permet d'avoir le nom du mois correspondant à un chiffre.
+ * @param mois est un nombre qui se trouve dans l'intervalle 1-12.
+ * @return le nom du mois.
  */
 string moisEnLitteral(unsigned mois) {
    assert(moisCorrect(mois));
@@ -213,19 +215,39 @@ string moisEnLitteral(unsigned mois) {
          return "Mois non existant.";
    }
 }
-
+/**
+ * Permet de vérifier que le nombr en paramètre se trouve dans l'intervalle 1-31.
+ * @param jour est le nombre que l'on vérifie.
+ * @return True si jour se trouve dans l'intervalle 1-31
+ */
 bool jourCorrect(unsigned jour) {
    return jour >= 1 && jour <= 31;
 }
-
+/**
+ * Permet de vérifier que le nombre en paramètre se trouve dans l'intervalle 1-12.
+ * @param mois est le nombre que l'on vérifie.
+ * @return True si mois se trouve dans l'intervalle 1-12
+ */
 bool moisCorrect(unsigned mois) {
    return mois >= 1 && mois <= 12;
 }
 
+/**
+ *Permet de vérifier si le nombre en paramètre se trouve dans l'intervalle
+ * ANNEE_MIN - ANNEE_MAX.
+ * @param annee est le nombre que l'on vérifie.
+ * @return True si annee se trouve l'intervalle ANNEE_MIN - ANNEE_MAX.
+ */
 bool anneeCorrecte(unsigned annee) {
    return annee >= ANNEE_MIN && annee <= ANNEE_MAX;
 }
 
+/**
+ * Permet de vérifier si le nombre en paramètre se trouve dans l'intervalle 1-7 et
+ * est donc un jour de semaine valide.
+ * @param jourSemaine est le nombre que l'on vérifie
+ * @return True si jourSemaine se trouve dans l'intervalle 1-7
+ */
 bool jourSemaineCorrect(unsigned short jourSemaine) {
    return jourSemaine >= 1 && jourSemaine <= 7;
 }
