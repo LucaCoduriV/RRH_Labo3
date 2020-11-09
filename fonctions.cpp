@@ -25,7 +25,7 @@ bool saisieMoisAnneeCorrect(unsigned &mois, unsigned &annee) {
    bool saisieOK;
 
    if (!(saisieOK = cin >> mois >> annee && moisCorrect(mois) && anneeCorrecte(annee)
-      )) {
+   )) {
       cin.clear();
       cout << endl << "Date non valide. Veuillez SVP recommencer." << endl;
    }
@@ -37,8 +37,8 @@ bool saisieMoisAnneeCorrect(unsigned &mois, unsigned &annee) {
 void afficherCalendriersIntervalle(unsigned moisDebut, unsigned anneeDebut, unsigned
 moisFin, unsigned anneeFin) {
    assert(moisCorrect(moisDebut) && moisCorrect(moisFin) && anneeCorrecte
-   (anneeDebut) && anneeCorrecte(anneeFin) &&
-   dateDebutEstAnterieure(moisDebut,anneeDebut, moisFin, anneeFin));
+      (anneeDebut) && anneeCorrecte(anneeFin) &&
+          dateDebutEstAnterieure(moisDebut, anneeDebut, moisFin, anneeFin));
 
    for (unsigned annee = anneeDebut; annee <= anneeFin; ++annee) {
       for (unsigned mois = moisDebut; mois <= (annee == anneeFin ? moisFin : 12);
@@ -57,19 +57,15 @@ void afficherCalendrier(unsigned mois, unsigned annee) {
    unsigned nbreJours = nbreJoursMois(mois, annee);
    unsigned nbreEspaces = (unsigned) jourSemaine - 1;
    cout << " L  M  M  J  V  S  D" << endl;
-   for (unsigned colonne = 1; colonne <= nbreJours + jourSemaine - 1; ++colonne) {
+   // Affichage des espaces et du jour dans la case du calendrier respective.
+   for (unsigned nCase = 1; nCase <= nbreJours + jourSemaine - 1; ++nCase) {
       if (nbreEspaces >= 1) {
          cout << setw(2) << " ";
          --nbreEspaces;
-      } else {
-         cout << setw(2) << colonne - jourSemaine + 1;
-      }
+      } else cout << setw(2) << nCase - jourSemaine + 1;
 
-      if (colonne % 7 == 0) {
-         cout << endl;
-      } else {
-         cout << " ";
-      }
+      if (nCase % 7 == 0) { cout << endl; }
+      else cout << " ";
    }
    cout << endl;
 }
@@ -79,8 +75,13 @@ unsigned short dateEnJourSemaine(unsigned jour, unsigned mois, unsigned annee) {
    assert(jourCorrect(jour) && moisCorrect(mois) && anneeCorrecte(annee));
 
    // Etablit le mois de mars = 1 et février = 12
-   if (mois >= 3) { m = mois - 2; a = annee; }
-   else { m = mois + 10; a = annee - 1; }
+   if (mois >= 3) {
+      m = mois - 2;
+      a = annee;
+   } else {
+      m = mois + 10;
+      a = annee - 1;
+   }
 
    const unsigned J = a / 100;
    const unsigned K = a % 100;
@@ -89,7 +90,7 @@ unsigned short dateEnJourSemaine(unsigned jour, unsigned mois, unsigned annee) {
    // Modifie dimanche = 0 en dimanche = 7
    if (jourSemaine == 0) jourSemaine = 7;
 
-   return (unsigned short)jourSemaine;
+   return (unsigned short) jourSemaine;
 }
 
 unsigned nbreJoursMois(unsigned mois, unsigned annee) {
@@ -159,5 +160,5 @@ bool anneeCorrecte(unsigned annee) {
 
 bool dateDebutEstAnterieure(unsigned moisDebut, unsigned anneeDebut, unsigned
 moisFin, unsigned anneeFin) {
-   return anneeDebut < anneeFin || (anneeDebut == anneeFin && moisDebut < moisFin);
+   return anneeDebut <= anneeFin || (anneeDebut == anneeFin && moisDebut <= moisFin);
 }
