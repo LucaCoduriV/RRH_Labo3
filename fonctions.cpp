@@ -55,7 +55,6 @@ void afficherCalendrier(unsigned mois, unsigned annee) {
    cout << endl << moisEnLitteral(mois) << " " << annee << endl << endl;
    unsigned jourSemaine = dateEnJourSemaine(1, mois, annee);
    unsigned nbreJours = nbreJoursMois(mois, annee);
-   //TODO doit vraiment faire un assert du nombre jours et jour de la semaine ???
    unsigned nbreEspaces = (unsigned) jourSemaine - 1;
    cout << " L  M  M  J  V  S  D" << endl;
    for (unsigned colonne = 1; colonne <= nbreJours + jourSemaine - 1; ++colonne) {
@@ -85,12 +84,12 @@ unsigned short dateEnJourSemaine(unsigned jour, unsigned mois, unsigned annee) {
 
    const unsigned J = a / 100;
    const unsigned K = a % 100;
-   unsigned h =  (jour + K + 5 * J + K / 4 + J / 4 + (13 * m - 1) / 5) % 7;
+   unsigned jourSemaine = (jour + K + 5 * J + K / 4 + J / 4 + (13 * m - 1) / 5) % 7;
 
    // Modifie dimanche = 0 en dimanche = 7
-   if (h == 0) h = 7;
+   if (jourSemaine == 0) jourSemaine = 7;
 
-   return (unsigned short)h;
+   return (unsigned short)jourSemaine;
 }
 
 unsigned nbreJoursMois(unsigned mois, unsigned annee) {
@@ -156,10 +155,6 @@ bool moisCorrect(unsigned mois) {
 
 bool anneeCorrecte(unsigned annee) {
    return annee >= ANNEE_MIN && annee <= ANNEE_MAX;
-}
-
-bool jourSemaineCorrect(unsigned short jourSemaine) {
-   return jourSemaine >= 1 && jourSemaine <= 7;
 }
 
 bool dateDebutEstAnterieure(unsigned moisDebut, unsigned anneeDebut, unsigned
