@@ -1,10 +1,12 @@
 /*
 -----------------------------------------------------------------------------------
-Nom du fichier : <nom du fichier>.<xxx> (xxx = h ou cpp)
-Auteur(s) : Tania Nunez
-Date creation : <jj.mm.aaaa>
-Description : <à compléter>
-Remarque(s) : <à compléter>
+Nom du fichier : fonctions.cpp
+Auteur(s) : Tania Nunez & Chloé Fontaine & Luca Coduri
+Date creation : 6.11.2020
+Description : Ce fichier contient l'implémentation des fonctions déclarées dans
+fonctions.h.
+Remarque(s) : Le bon fonctionnement des fonctions est assurée avec des asserts.
+Pour les désactiver ajoutez "#define NDEBUG" au-dessus des "#include".
 Compilateur : Mingw-w64 g++ 8.1.0
 -----------------------------------------------------------------------------------
 */
@@ -39,7 +41,8 @@ moisFin, unsigned anneeFin) {
    assert(moisCorrect(moisDebut) && moisCorrect(moisFin) && anneeCorrecte
       (anneeDebut) && anneeCorrecte(anneeFin) &&
           dateDebutEstAnterieure(moisDebut, anneeDebut, moisFin, anneeFin));
-
+   // La condition ternaire vérifie si l'on doit s'arrêter au mois de
+   // décembre (12) ou au mois moisFin.
    for (unsigned annee = anneeDebut; annee <= anneeFin; ++annee) {
       for (unsigned mois = moisDebut; mois <= (annee == anneeFin ? moisFin : 12);
            ++mois) {
@@ -56,14 +59,15 @@ void afficherCalendrier(unsigned mois, unsigned annee) {
    unsigned jourSemaine = dateEnJourSemaine(1, mois, annee);
    unsigned nbreJours = nbreJoursMois(mois, annee);
    unsigned nbreEspaces = (unsigned) jourSemaine - 1;
+
    cout << " L  M  M  J  V  S  D" << endl;
-   // Affichage des espaces et du jour dans la case du calendrier respective.
+   // Affiche un espace ou le jour dans la case du calendrier respective.
    for (unsigned nCase = 1; nCase <= nbreJours + jourSemaine - 1; ++nCase) {
       if (nbreEspaces >= 1) {
          cout << setw(2) << " ";
-         --nbreEspaces;
+         nbreEspaces--;
       } else cout << setw(2) << nCase - jourSemaine + 1;
-
+      // A la fin de la semaine (jour 7), on revient à la première colonne (lundi).
       if (nCase % 7 == 0) { cout << endl; }
       else cout << " ";
    }
@@ -74,7 +78,7 @@ unsigned short dateEnJourSemaine(unsigned jour, unsigned mois, unsigned annee) {
    unsigned m, a;
    assert(jourCorrect(jour) && moisCorrect(mois) && anneeCorrecte(annee));
 
-   // Etablit le mois de mars = 1 et février = 12
+   // Établit le mois de mars = 1 et février = 12
    if (mois >= 3) {
       m = mois - 2;
       a = annee;
@@ -155,6 +159,7 @@ bool moisCorrect(unsigned mois) {
 }
 
 bool anneeCorrecte(unsigned annee) {
+   cout << endl << annee << endl;
    return annee >= ANNEE_MIN && annee <= ANNEE_MAX;
 }
 
