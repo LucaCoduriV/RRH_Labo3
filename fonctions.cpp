@@ -129,25 +129,17 @@ unsigned short dateEnJourSemaine(unsigned jour, unsigned mois, unsigned annee) {
    assert(jourCorrect(jour) && moisCorrect(mois) && anneeCorrecte(annee));
 
    // Etablit le mois de mars = 1 et février = 12
-   if (mois >= 3) {
-      m = mois - 2;
-      a = annee;
-   } else {
-      m = mois + 10;
-      a = annee - 1;
-   }
+   if (mois >= 3) { m = mois - 2; a = annee; }
+   else { m = mois + 10; a = annee - 1; }
+
    const unsigned J = a / 100;
    const unsigned K = a % 100;
-   unsigned h =  jour + K + 5 * J + K / 4 + J / 4 + (13 * m - 1) / 5;
-
-   unsigned short jourSemaine = (unsigned short)h % 7;
+   unsigned h =  (jour + K + 5 * J + K / 4 + J / 4 + (13 * m - 1) / 5) % 7;
 
    // Modifie dimanche = 0 en dimanche = 7
-   if (jourSemaine == 0) {
-      jourSemaine = 7;
-   }
+   if (h == 0) h = 7;
 
-   return jourSemaine;
+   return (unsigned short)h;
 }
 
 /**

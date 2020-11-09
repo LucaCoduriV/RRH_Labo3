@@ -29,7 +29,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9c5c2ca8-e9d2-4938-93c3-c313a1f610c7" name="Default Changelist" comment="Ajout de todos">
+    <list default="true" id="9c5c2ca8-e9d2-4938-93c3-c313a1f610c7" name="Default Changelist" comment="Ajout de commentaire">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fonctions.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/fonctions.cpp" afterDir="false" />
     </list>
@@ -85,7 +85,8 @@
       <workItem from="1604771415328" duration="16853000" />
       <workItem from="1604858019249" duration="48000" />
       <workItem from="1604859914143" duration="725000" />
-      <workItem from="1604866111197" duration="5115000" />
+      <workItem from="1604866111197" duration="6788000" />
+      <workItem from="1604910140355" duration="2338000" />
     </task>
     <task id="LOCAL-00001" summary="Formule zeller">
       <created>1604668566414</created>
@@ -178,7 +179,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604790591428</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Ajout de commentaire">
+      <created>1604873009304</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1604873009304</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -207,7 +215,8 @@
     <MESSAGE value="Correction fonction zeller" />
     <MESSAGE value="Correction de la connerie de luca" />
     <MESSAGE value="Ajout de todos" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout de todos" />
+    <MESSAGE value="Ajout de commentaire" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout de commentaire" />
   </component>
   <component name="WindowStateProjectService">
     <state x="184" y="86" key="DiffContextDialog" timestamp="1604671729005">
@@ -238,22 +247,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="336" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604791386110" />
-    <state x="212" y="92" key="MergeDialog" timestamp="1604673621115">
+    <state x="212" y="92" width="1632" height="868" key="MergeDialog" timestamp="1604877479046">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="212" y="92" key="MergeDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604673621115" />
-    <state x="508" y="267" key="MultipleFileMergeDialog" timestamp="1604673621127">
+    <state x="212" y="92" width="1632" height="868" key="MergeDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604877479046" />
+    <state x="508" y="267" key="MultipleFileMergeDialog" timestamp="1604877479055">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="508" y="267" key="MultipleFileMergeDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604673621127" />
+    <state x="508" y="267" key="MultipleFileMergeDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604877479055" />
     <state x="461" y="165" key="SettingsEditor" timestamp="1604783242499">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="165" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604783242499" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1604790595229">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1604877490816">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604790595229" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604877490816" />
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604673410480">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
