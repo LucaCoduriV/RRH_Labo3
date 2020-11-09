@@ -13,29 +13,96 @@ using namespace std;
 #define LABO_3_FONCTIONS_H
 const unsigned ANNEE_MIN = 1900, ANNEE_MAX = 2100;
 
+/**
+ * Vérifie le type de la saisie utilisateur et si les paramètres appartiennent
+ * bien à l'intervalle défini et, s'il n'y a pas d'erreurs, attribue par référence
+ * les valeurs entrées par l'utilisateur aux variables entrées en paramètres.
+ * @param mois [1 - 12]
+ * @param annee [ANNEE_MIN - ANNEE_MAX]
+ * @return 1 (true) s'il n'y a pas d'erreurs, 0 (false) s'il y a des erreurs
+ */
 bool saisieMoisAnneeCorrect(unsigned &mois, unsigned &annee);
 
+/**
+ * Affiche tous les calendriers appartenant à l'intervalle entré par paramètres.
+ * @param moisDebut [1 - 12]
+ * @param anneeDebut [ANNEE_MIN - ANNEE_MAX]
+ * @param moisFin [1 - 12]
+ * @param anneeFin [ANNEE_MIN - ANNEE_MAX]
+ */
 void afficherCalendriersIntervalle(unsigned moisDebut, unsigned anneeDebut, unsigned
 moisFin, unsigned anneeFin);
 
+/**
+ * Affiche le calendrier du mois de l'année entrés en paramètres.
+ * @param mois [1 - 12]
+ * @param annee [ANNEE_MIN - ANNEE_MAX]
+ */
 void afficherCalendrier(unsigned mois, unsigned annee);
 
+/**
+ * Calcule le jour de la semaine correspondant à une date.
+ * Ex: le 7 novembre 2020 vaut 6 (= samedi)
+ * Reprend la formule Zeller.
+ * Source: https://en.wikipedia.org/wiki/Zeller%27s_congruence
+ * @param jour [1 - 31]
+ * @param mois [1 - 12]
+ * @param annee [ANNEE_MIN - ANNEE_MAX]
+ * @return le jour de la semaine (lundi = 1, ..., dimanche = 7)
+ */
 unsigned short dateEnJourSemaine(unsigned jour, unsigned mois, unsigned annee);
 
+/**
+ * Renvoie le nombre de jours présent dans le mois d'une année.
+ * @param mois [1 - 12]
+ * @param annee [ANNEE_MIN - ANNEE_MAX]
+ * @return le nombre de jours [28 - 30]
+ */
 unsigned nbreJoursMois(unsigned mois, unsigned annee);
 
+/**
+ * Détermine si l'année entrée en paramètre est bissextile.
+ * @param annee [ANNEE_MIN - ANNEE_MAX]
+ * @return 1 (true) si l'année est bissextile
+ */
 bool estBissextile(unsigned annee);
 
+/**
+ * Renvoie le nom littéral du mois entré en chiffre en paramètre.
+ * @param mois [1 -12]
+ * @return le mois en littéral
+ */
 string moisEnLitteral(unsigned);
 
+/**
+ * Vérifie que le jour appartiennent à l'intervalle [1 - 31].
+ * @param jour : la valeur que l'on vérifie.
+ * @return 1 (true) si jour appartient à l'intervalle [1 - 31]
+ */
 bool jourCorrect(unsigned jour);
 
+/**
+ * Vérifie que le mois appartienne à l'intervalle [1 - 12].
+ * @param mois : la valeur que l'on vérifie.
+ * @return 1 (true) si mois se trouve dans l'intervalle [1 - 12]
+ */
 bool moisCorrect(unsigned mois);
 
+/**
+ * Vérifie que l'année appartienne à l'intervalle [ANNEE_MIN - ANNEE_MAX].
+ * @param annee : la valeur que l'on vérifie.
+ * @return 1(true) si annee appartient à l'intervalle [ANNEE_MIN - ANNEE_MAX].
+ */
 bool anneeCorrecte(unsigned annee);
 
-bool jourSemaineCorrect(unsigned short jourSemaine);
-
+/**
+ * Vérifie que la date de début soit antérieure à la date de fin.
+ * @param moisDebut [1 - 12]
+ * @param anneeDebut [ANNEE_MIN - ANNEE_MAX]
+ * @param moisFin [1 - 12]
+ * @param anneeFin [ANNEE_MIN - ANNEE_MAX]
+ * @return 1 (true) si la date de début est antérieure, 0 (false) autrement
+ */
 bool dateDebutEstAnterieure(unsigned moisDebut, unsigned anneeDebut, unsigned
 moisFin, unsigned anneeFin);
 
