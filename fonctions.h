@@ -23,12 +23,12 @@ const unsigned ANNEE_MIN = 1900, ANNEE_MAX = 2100;
  * les valeurs entrées par l'utilisateur aux variables entrées en paramètres.
  * @param mois [1 - 12]
  * @param annee [ANNEE_MIN - ANNEE_MAX]
- * @return 1 (true) s'il n'y a pas d'erreurs, 0 (false) s'il y a des erreurs
+ * @return true s'il n'y a pas d'erreurs
  */
 bool saisieMoisAnneeCorrect(unsigned &mois, unsigned &annee);
 
 /**
- * Affiche tous les calendriers appartenant à l'intervalle entré par paramètres.
+ * Affiche tous les calendriers appartenant à l'intervalle entré en paramètres.
  * @param moisDebut [1 - 12]
  * @param anneeDebut [ANNEE_MIN - ANNEE_MAX]
  * @param moisFin [1 - 12]
@@ -67,7 +67,7 @@ unsigned nbreJoursMois(unsigned mois, unsigned annee);
 /**
  * Détermine si l'année entrée en paramètre est bissextile.
  * @param annee [ANNEE_MIN - ANNEE_MAX]
- * @return 1 (true) si l'année est bissextile
+ * @return true si l'année est bissextile
  */
 bool estBissextile(unsigned annee);
 
@@ -79,23 +79,23 @@ bool estBissextile(unsigned annee);
 string moisEnLitteral(unsigned);
 
 /**
- * Vérifie que le jour appartiennent à l'intervalle [1 - 31].
- * @param jour : la valeur que l'on vérifie.
- * @return 1 (true) si jour appartient à l'intervalle [1 - 31]
+ * Vérifie que le jour appartienne à l'intervalle [1 - 31].
+ * @param jour : la valeur que l'on vérifie
+ * @return true si jour appartient à l'intervalle [1 - 31]
  */
 bool jourCorrect(unsigned jour);
 
 /**
  * Vérifie que le mois appartienne à l'intervalle [1 - 12].
- * @param mois : la valeur que l'on vérifie.
- * @return 1 (true) si mois se trouve dans l'intervalle [1 - 12]
+ * @param mois : la valeur que l'on vérifie
+ * @return true si mois se trouve dans l'intervalle [1 - 12]
  */
 bool moisCorrect(unsigned mois);
 
 /**
  * Vérifie que l'année appartienne à l'intervalle [ANNEE_MIN - ANNEE_MAX].
- * @param annee : la valeur que l'on vérifie.
- * @return 1(true) si annee appartient à l'intervalle [ANNEE_MIN - ANNEE_MAX].
+ * @param annee : la valeur que l'on vérifie
+ * @return true si annee appartient à l'intervalle [ANNEE_MIN - ANNEE_MAX]
  */
 bool anneeCorrecte(unsigned annee);
 
@@ -105,9 +105,9 @@ bool anneeCorrecte(unsigned annee);
  * @param anneeDebut [ANNEE_MIN - ANNEE_MAX]
  * @param moisFin [1 - 12]
  * @param anneeFin [ANNEE_MIN - ANNEE_MAX]
- * @return 1 (true) si la date de début est antérieure, 0 (false) autrement
+ * @return true si la date de début est antérieure
  */
 bool dateDebutEstAnterieure(unsigned moisDebut, unsigned anneeDebut, unsigned
 moisFin, unsigned anneeFin);
 
-#endif //LABO_3_FONCTIONS_H
+#endif

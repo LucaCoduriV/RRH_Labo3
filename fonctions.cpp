@@ -5,8 +5,8 @@ Auteur(s) : Tania Nunez & Chloé Fontaine & Luca Coduri
 Date creation : 6.11.2020
 Description : Ce fichier contient l'implémentation des fonctions déclarées dans
 fonctions.h.
-Remarque(s) : Le bon fonctionnement des fonctions est assurée avec des asserts.
-Pour les désactiver ajoutez "#define NDEBUG" au-dessus des "#include".
+Remarque(s) : Le bon fonctionnement des fonctions est assuré avec des asserts.
+Pour les désactiver, ajoutez "#define NDEBUG" au-dessus des "#include".
 Compilateur : Mingw-w64 g++ 8.1.0
 -----------------------------------------------------------------------------------
 */
@@ -41,8 +41,8 @@ moisFin, unsigned anneeFin) {
    assert(moisCorrect(moisDebut) && moisCorrect(moisFin) && anneeCorrecte
       (anneeDebut) && anneeCorrecte(anneeFin) &&
           dateDebutEstAnterieure(moisDebut, anneeDebut, moisFin, anneeFin));
-   // La condition ternaire vérifie si l'on doit s'arrêter au mois de
-   // décembre (12) ou au mois moisFin.
+   /* La condition ternaire vérifie si l'on doit s'arrêter au mois de
+      décembre (12) ou au mois moisFin. */
    for (unsigned annee = anneeDebut; annee <= anneeFin; ++annee) {
       for (unsigned mois = moisDebut; mois <= (annee == anneeFin ? moisFin : 12);
            ++mois) {
@@ -56,40 +56,34 @@ void afficherCalendrier(unsigned mois, unsigned annee) {
    assert(moisCorrect(mois) && anneeCorrecte(annee));
 
    cout << endl << moisEnLitteral(mois) << " " << annee << endl << endl;
-   unsigned jourSemaine = dateEnJourSemaine(1, mois, annee);
-   unsigned nbreJours = nbreJoursMois(mois, annee);
-   unsigned nbreEspaces = (unsigned) jourSemaine - 1;
+   const unsigned JOUR_SEMAINE = dateEnJourSemaine(1, mois, annee);
+   const unsigned NBRE_JOURS = nbreJoursMois(mois, annee);
+   unsigned nbreEspaces = (unsigned) JOUR_SEMAINE - 1;
 
    cout << " L  M  M  J  V  S  D" << endl;
    // Affiche un espace ou le jour dans la case du calendrier respective.
-   for (unsigned nCase = 1; nCase <= nbreJours + jourSemaine - 1; ++nCase) {
+   for (unsigned noCase = 1; noCase <= NBRE_JOURS + JOUR_SEMAINE - 1; ++noCase) {
       if (nbreEspaces >= 1) {
          cout << setw(2) << " ";
          nbreEspaces--;
-      } else cout << setw(2) << nCase - jourSemaine + 1;
-      // A la fin de la semaine (jour 7), on revient à la première colonne (lundi).
-      if (nCase % 7 == 0) { cout << endl; }
+      } else cout << setw(2) << noCase - JOUR_SEMAINE + 1;
+      // À la fin de la semaine (jour 7), on revient à la première colonne (lundi).
+      if (noCase % 7 == 0) { cout << endl; }
       else cout << " ";
    }
    cout << endl;
 }
 
 unsigned short dateEnJourSemaine(unsigned jour, unsigned mois, unsigned annee) {
-   unsigned m, a;
    assert(jourCorrect(jour) && moisCorrect(mois) && anneeCorrecte(annee));
-
    // Établit le mois de mars = 1 et février = 12
-   if (mois >= 3) {
-      m = mois - 2;
-      a = annee;
-   } else {
-      m = mois + 10;
-      a = annee - 1;
-   }
+   const unsigned MOIS = mois >= 3 ? mois - 2 : mois + 10;
+   const unsigned ANNEE = mois >= 3 ? annee : annee - 1;
 
-   const unsigned J = a / 100;
-   const unsigned K = a % 100;
-   unsigned jourSemaine = (jour + K + 5 * J + K / 4 + J / 4 + (13 * m - 1) / 5) % 7;
+   const unsigned J = ANNEE / 100;
+   const unsigned K = ANNEE % 100;
+   unsigned jourSemaine =
+      (jour + K + 5 * J + K / 4 + J / 4 + (13 * MOIS - 1) / 5) % 7;
 
    // Modifie dimanche = 0 en dimanche = 7
    if (jourSemaine == 0) jourSemaine = 7;
@@ -159,7 +153,6 @@ bool moisCorrect(unsigned mois) {
 }
 
 bool anneeCorrecte(unsigned annee) {
-   cout << endl << annee << endl;
    return annee >= ANNEE_MIN && annee <= ANNEE_MAX;
 }
 
