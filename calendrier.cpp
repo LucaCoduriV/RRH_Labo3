@@ -1,13 +1,16 @@
 /*
 -----------------------------------------------------------------------------------
-Nom du fichier : calendrier.cpp
-Auteur(s) : Tania Nunez & Chloé Fontaine & Luca Coduri
-Date creation : 6.11.2020
-Description : Ce fichier contient l'implémentation des fonctions déclarées dans
-calendrier.h.
-Remarque(s) : Le bon fonctionnement des fonctions est assuré avec des asserts.
-Pour les désactiver, ajoutez "#define NDEBUG" au-dessus des "#include".
-Compilateur : Mingw-w64 g++ 8.1.0
+Nom du fichier :  calendrier.cpp
+Auteur(s)      :  Tania Nunez & Chloé Fontaine & Luca Coduri
+Date creation  :  6.11.2020
+
+Description    : Ce fichier contient l'implémentation des fonctions déclarées dans
+                 calendrier.h.
+
+Remarque(s)    : Le bon fonctionnement des fonctions est assuré avec des asserts. Pour
+                 les désactiver, ajoutez "#define NDEBUG" au-dessus des "#include".
+
+Compilateur    : Mingw-w64 g++ 8.1.0
 -----------------------------------------------------------------------------------
 */
 #include <iostream>
@@ -26,11 +29,21 @@ enum class Mois {
 bool saisieMoisAnneeCorrect(unsigned short &mois, unsigned &annee) {
    bool saisieOK;
 
-   if (!(saisieOK = cin >> mois >> annee && moisCorrect(mois) && anneeCorrecte(annee)
-   )) {
+   if (!(saisieOK = cin >> mois && moisCorrect(mois))) {
       cin.clear();
       cout << endl << "Date non valide. Veuillez SVP recommencer." << endl;
    }
+
+   // Vérifie que l'utilisateur entre sa date sur une seule ligne
+   if (cin.peek() == '\n') {
+      cout << endl << "Vous devez entre votre date sur une seule et meme ligne. "
+                      "Veuillez SVP recommencer." << endl;
+      saisieOK = false;
+   } else if (!(saisieOK = cin >> annee && anneeCorrecte(annee))) {
+      cin.clear();
+      cout << endl << "Date non valide. Veuillez SVP recommencer." << endl;
+   }
+
    cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
    return saisieOK;
