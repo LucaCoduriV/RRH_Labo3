@@ -15,9 +15,8 @@ Remarque(s)    : Dans le cadre de notre labo en PRG1, il nous est demandé que
                  supérieure à 2100. En revanche l'algorithme utilisé, nous permet
                  d'aller du début du calendrier grégorien jusqu'à la valeur max d'un
                  unsigned int - 1 (dans notre cas 4294967294).
-                 À la fin du programme lorsque l'on demande à l'utilisateur s'il veut
-                 quitter ou non, nous ne traitons que le premier caractère de
-                 l'entrée.
+                 L'utilisateur doit saisir une date sur une seule ligne.
+                 Exemple : 11 2020
 
 Compilateur    : Mingw-w64 g++ 8.1.0
 -----------------------------------------------------------------------------------
