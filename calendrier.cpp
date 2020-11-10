@@ -28,16 +28,16 @@ enum class Mois {
 };
 
 bool saisieMoisAnneeCorrect(unsigned short &mois, unsigned &annee) {
-   bool saisieOkey = (cin >> mois && moisCorrect(mois)) && cin.peek() != '\n'
-                     && (cin >> annee && anneeCorrecte(annee));
+   bool saisieOK = (cin >> mois && moisCorrect(mois)) && cin.peek() != '\n'
+                   && (cin >> annee && anneeCorrecte(annee));
 
-   if (!saisieOkey) {
+   if (!saisieOK) {
       cout << endl << "Date non valide. Veuillez SVP recommencer." << endl;
       cin.clear();
    }
    cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
-   return saisieOkey;
+   return saisieOK;
 }
 
 void afficherCalendriersIntervalle(unsigned moisDebut, unsigned anneeDebut, unsigned
