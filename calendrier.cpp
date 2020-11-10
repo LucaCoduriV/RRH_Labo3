@@ -28,20 +28,18 @@ enum class Mois {
 
 bool saisieMoisAnneeCorrect(unsigned short &mois, unsigned &annee) {
    bool saisieOK = cin >> mois && moisCorrect(mois);
-   const string phraseErreur = "Date non valide. Veuillez SVP recommencer.";
+   if (cin.peek() == '\n') {
+      cout << endl << "Vous devez entrer votre date sur une seule et meme ligne. "
+                      "Veuillez SVP recommencer." << endl;
+
+      cin.ignore(numeric_limits<streamsize>::max(), '\n');
+      return false;
+   }
+   saisieOK = saisieOK && cin >> annee && anneeCorrecte(annee);
 
    if (!(saisieOK)) {
       cin.clear();
-      cout << endl << phraseErreur << endl;
-   }
-   // Vérifie que l'utilisateur entre sa date sur une seule ligne
-   if (cin.peek() == '\n') {
-      cout << endl << "Vous devez entrer votre date sur une seule et meme ligne. "
-                      "Veuillez SVP recommencer." << endl << endl;
-      saisieOK = false;
-   } else if (!(saisieOK = cin >> annee && anneeCorrecte(annee))) {
-      cin.clear();
-      cout << endl << phraseErreur << endl;
+      cout << endl << "Date non valide. Veuillez SVP recommencer." << endl;
    }
 
    cin.ignore(numeric_limits<streamsize>::max(), '\n');

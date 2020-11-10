@@ -33,8 +33,8 @@ int main() {
       unsigned anneeDebut, anneeFin;
       unsigned short moisDebut, moisFin;
       do {
-         cout << "Entrez la date de debut, mois [1 - 12] annee [" << ANNEE_MIN
-         <<  " - " << ANNEE_MAX << "] : ";
+         cout << endl << "Entrez la date de debut, mois [1 - 12] annee [" <<
+         ANNEE_MIN <<  " - " << ANNEE_MAX << "] : ";
       } while (!saisieMoisAnneeCorrect(moisDebut, anneeDebut));
 
       do {
