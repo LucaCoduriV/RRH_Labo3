@@ -1,14 +1,15 @@
 /*
 -----------------------------------------------------------------------------------
-Nom du fichier :  calendrier.cpp
-Auteur(s)      :  Tania Nunez & Chloé Fontaine & Luca Coduri
-Date creation  :  6.11.2020
+Nom du fichier : calendrier.cpp
+Auteur(s)      : Tania Nunez & Chloé Fontaine & Luca Coduri
+Date creation  : 6.11.2020
 
 Description    : Ce fichier contient l'implémentation des fonctions déclarées dans
                  calendrier.h.
 
-Remarque(s)    : Le bon fonctionnement des fonctions est assuré avec des asserts. Pour
-                 les désactiver, ajoutez "#define NDEBUG" au-dessus des "#include".
+Remarque(s)    : Le bon fonctionnement des fonctions est assuré avec des asserts.
+                 Pour les désactiver, ajoutez "#define NDEBUG" au-dessus des
+                 "#include".
 
 Compilateur    : Mingw-w64 g++ 8.1.0
 -----------------------------------------------------------------------------------
@@ -27,24 +28,16 @@ enum class Mois {
 };
 
 bool saisieMoisAnneeCorrect(unsigned short &mois, unsigned &annee) {
-   bool saisieOK = cin >> mois && moisCorrect(mois);
-   if (cin.peek() == '\n') {
-      cout << endl << "Vous devez entrer votre date sur une seule et meme ligne. "
-                      "Veuillez SVP recommencer." << endl;
+   bool saisieOkey = (cin >> mois && moisCorrect(mois)) && cin.peek() != '\n'
+                     && (cin >> annee && anneeCorrecte(annee));
 
-      cin.ignore(numeric_limits<streamsize>::max(), '\n');
-      return false;
-   }
-   saisieOK = saisieOK && cin >> annee && anneeCorrecte(annee);
-
-   if (!(saisieOK)) {
-      cin.clear();
+   if (!saisieOkey) {
       cout << endl << "Date non valide. Veuillez SVP recommencer." << endl;
+      cin.clear();
    }
-
    cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
-   return saisieOK;
+   return saisieOkey;
 }
 
 void afficherCalendriersIntervalle(unsigned moisDebut, unsigned anneeDebut, unsigned

@@ -34,12 +34,12 @@ int main() {
       unsigned short moisDebut, moisFin;
       do {
          cout << endl << "Entrez la date de debut, mois [1 - 12] annee [" <<
-         ANNEE_MIN <<  " - " << ANNEE_MAX << "] : ";
+              ANNEE_MIN << " - " << ANNEE_MAX << "] : ";
       } while (!saisieMoisAnneeCorrect(moisDebut, anneeDebut));
 
       do {
          cout << endl << "Entrez la date de fin, mois [1 - 12] annee [" << anneeDebut
-              <<  " - " << ANNEE_MAX << "] : ";
+              << " - " << ANNEE_MAX << "] : ";
       } while (!saisieMoisAnneeCorrect(moisFin, anneeFin));
 
       if (!dateDebutEstAnterieure(moisDebut, anneeDebut, moisFin, anneeFin)) {
@@ -54,14 +54,13 @@ int main() {
       bool saisieOK;
       do {
          cout << "Voulez-vous quitter le programme ? [o/n]: ";
-
-         if (!(saisieOK = cin >> reponse && (reponse == 'o' || reponse == 'n'))) {
+         // Vérifie que l'utilisateur n'a rien écrit d'autre que 'o' ou 'n'.
+         if (!(saisieOK = cin >> reponse && (reponse == 'o' || reponse == 'n')
+                          && cin.peek() == '\n')) {
             cin.clear();
             cout << endl << "Votre reponse n'est pas valide. Veuillez SVP "
                             "recommencer." << endl;
          }
-         // Vérifie que l'utilisateur n'a rien écrit d'autre que 'o' ou 'n'.
-         saisieOK = saisieOK && cin.peek() == '\n';
          cin.ignore(numeric_limits<streamsize>::max(), '\n');
          cout << endl;
       } while (!saisieOK);
