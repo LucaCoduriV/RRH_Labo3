@@ -4,7 +4,7 @@ Nom du fichier : fonctions.h
 Auteur(s) : Tania Nunez & Chloé Fontaine & Luca Coduri
 Date creation : 6.11.2020
 Description : Ce fichier contient les déclarations de toutes les fonctions
-permettant l'affichage d'un calendrier.
+implémentées dans fonctions.cpp. Elles permettent l'affichage d'un calendrier.
 Remarque(s) : Les bornes de ces fonctions sont définies par ANNEE_MIN et ANNEE_MAX.
 Attention ! Ne pas définir une valeur en dessous de 1582 pour ANNEE_MIN car le
 programme ne donnera plus les bonnes valeurs. De même pour ANNEE_MAX, ne pas

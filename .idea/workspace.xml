@@ -29,7 +29,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9c5c2ca8-e9d2-4938-93c3-c313a1f610c7" name="Default Changelist" comment="ATTENDS LUCA IL FAUT ENLEVER L'ESPACE LIGNE 19 !!!!">
+    <list default="true" id="9c5c2ca8-e9d2-4938-93c3-c313a1f610c7" name="Default Changelist" comment="correction faute ort">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fonctions.h" beforeDir="false" afterPath="$PROJECT_DIR$/fonctions.h" afterDir="false" />
     </list>
@@ -99,7 +99,7 @@
       <workItem from="1604910140355" duration="2338000" />
       <workItem from="1604916499004" duration="7359000" />
       <workItem from="1604954320975" duration="3714000" />
-      <workItem from="1604995354207" duration="3071000" />
+      <workItem from="1604995354207" duration="3779000" />
     </task>
     <task id="LOCAL-00001" summary="Formule zeller">
       <created>1604668566414</created>
@@ -234,7 +234,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605002113862</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="correction faute ort">
+      <created>1605002218112</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1605002218112</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -269,7 +276,8 @@
     <MESSAGE value="Changement fonctions nbJourMois en unsigned short" />
     <MESSAGE value="removed todos" />
     <MESSAGE value="ATTENDS LUCA IL FAUT ENLEVER L'ESPACE LIGNE 19 !!!!" />
-    <option name="LAST_COMMIT_MESSAGE" value="ATTENDS LUCA IL FAUT ENLEVER L'ESPACE LIGNE 19 !!!!" />
+    <MESSAGE value="correction faute ort" />
+    <option name="LAST_COMMIT_MESSAGE" value="correction faute ort" />
   </component>
   <component name="WindowStateProjectService">
     <state x="184" y="86" key="DiffContextDialog" timestamp="1604671729005">
@@ -284,25 +292,25 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="779" y="225" key="Github.UntrackedFilesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604581396167" />
-    <state width="1877" height="336" key="GridCell.Tab.0.bottom" timestamp="1604958519918">
+    <state width="1875" height="335" key="GridCell.Tab.0.bottom" timestamp="1605002639722">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="336" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604958519918" />
+    <state width="1875" height="335" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605002639722" />
     <state width="1456" height="331" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1604922425985" />
-    <state width="1877" height="336" key="GridCell.Tab.0.center" timestamp="1604958519918">
+    <state width="1875" height="335" key="GridCell.Tab.0.center" timestamp="1605002639721">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="336" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604958519918" />
+    <state width="1875" height="335" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605002639721" />
     <state width="1456" height="331" key="GridCell.Tab.0.center/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1604922425985" />
-    <state width="1877" height="336" key="GridCell.Tab.0.left" timestamp="1604958519918">
+    <state width="1875" height="335" key="GridCell.Tab.0.left" timestamp="1605002639721">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="336" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604958519918" />
+    <state width="1875" height="335" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605002639721" />
     <state width="1456" height="331" key="GridCell.Tab.0.left/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1604922425985" />
-    <state width="1877" height="336" key="GridCell.Tab.0.right" timestamp="1604958519918">
+    <state width="1875" height="335" key="GridCell.Tab.0.right" timestamp="1605002639721">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="336" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604958519918" />
+    <state width="1875" height="335" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605002639721" />
     <state width="1456" height="331" key="GridCell.Tab.0.right/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1604922425985" />
     <state x="212" y="92" width="1632" height="868" key="MergeDialog" timestamp="1604877479046">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -316,10 +324,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="475" y="248" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604957547665" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1605002116868">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1605002785684">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605002116868" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605002785684" />
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604673410480">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
