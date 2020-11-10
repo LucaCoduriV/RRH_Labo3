@@ -62,7 +62,7 @@ unsigned short dateEnJourSemaine(unsigned jour, unsigned mois, unsigned annee);
  * @param annee [ANNEE_MIN - ANNEE_MAX]
  * @return le nombre de jours [28 - 30]
  */
-unsigned nbreJoursMois(unsigned mois, unsigned annee);
+unsigned short nbreJoursMois(unsigned mois, unsigned annee);
 
 /**
  * Détermine si l'année entrée en paramètre est bissextile.

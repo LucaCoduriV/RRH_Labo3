@@ -91,7 +91,7 @@ unsigned short dateEnJourSemaine(unsigned jour, unsigned mois, unsigned annee) {
    return (unsigned short) jourSemaine;
 }
 
-unsigned nbreJoursMois(unsigned mois, unsigned annee) {
+unsigned short nbreJoursMois(unsigned mois, unsigned annee) {
    assert(moisCorrect(mois) && anneeCorrecte(annee));
 
    switch ((Mois) mois) {
