@@ -25,7 +25,7 @@ const unsigned ANNEE_MIN = 1900, ANNEE_MAX = 2100;
  * @param annee [ANNEE_MIN - ANNEE_MAX]
  * @return true s'il n'y a pas d'erreurs
  */
-bool saisieMoisAnneeCorrect(unsigned &mois, unsigned &annee);
+bool saisieMoisAnneeCorrect(unsigned short &mois, unsigned &annee);
 
 /**
  * Affiche tous les calendriers appartenant à l'intervalle entré en paramètres.

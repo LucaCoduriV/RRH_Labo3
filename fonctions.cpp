@@ -23,7 +23,7 @@ enum class Mois {
    SEPTEMBRE, OCTOBRE, NOVEMBRE, DECEMBRE
 };
 
-bool saisieMoisAnneeCorrect(unsigned &mois, unsigned &annee) {
+bool saisieMoisAnneeCorrect(unsigned short &mois, unsigned &annee) {
    bool saisieOK;
 
    if (!(saisieOK = cin >> mois >> annee && moisCorrect(mois) && anneeCorrecte(annee)

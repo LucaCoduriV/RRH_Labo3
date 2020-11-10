@@ -28,7 +28,8 @@ using namespace std;
 
 int main() {
    while (true) {
-      unsigned moisDebut, anneeDebut, moisFin, anneeFin;
+      unsigned anneeDebut, anneeFin;
+      unsigned short moisDebut, moisFin;
       do {
          cout << "Entrez la date de debut, mois [1 - 12] annee [" << ANNEE_MIN
          <<  " - " << ANNEE_MAX << "] : ";

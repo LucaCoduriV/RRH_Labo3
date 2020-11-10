@@ -29,9 +29,8 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9c5c2ca8-e9d2-4938-93c3-c313a1f610c7" name="Default Changelist" comment="Ajout des en-têtes + commentaires">
+    <list default="true" id="9c5c2ca8-e9d2-4938-93c3-c313a1f610c7" name="Default Changelist" comment="TOUT OK SAUF SHORT ET DEPASSEMENT !">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fonctions.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/fonctions.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fonctions.h" beforeDir="false" afterPath="$PROJECT_DIR$/fonctions.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
@@ -68,11 +67,6 @@
     <property name="settings.editor.selected.configurable" value="CMakeSettings" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="RRH_Labo3" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="RRH_Labo3" TARGET_NAME="RRH_Labo3" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="RRH_Labo3" RUN_TARGET_NAME="RRH_Labo3">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -102,6 +96,7 @@
       <workItem from="1604910140355" duration="2338000" />
       <workItem from="1604916499004" duration="7359000" />
       <workItem from="1604954320975" duration="3714000" />
+      <workItem from="1604995354207" duration="2527000" />
     </task>
     <task id="LOCAL-00001" summary="Formule zeller">
       <created>1604668566414</created>
@@ -254,25 +249,25 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="779" y="225" key="Github.UntrackedFilesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604581396167" />
-    <state width="1877" height="336" key="GridCell.Tab.0.bottom" timestamp="1604957435608">
+    <state width="1877" height="336" key="GridCell.Tab.0.bottom" timestamp="1604958519918">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="336" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604957435608" />
+    <state width="1877" height="336" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604958519918" />
     <state width="1456" height="331" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1604922425985" />
-    <state width="1877" height="336" key="GridCell.Tab.0.center" timestamp="1604957435608">
+    <state width="1877" height="336" key="GridCell.Tab.0.center" timestamp="1604958519918">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="336" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604957435608" />
+    <state width="1877" height="336" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604958519918" />
     <state width="1456" height="331" key="GridCell.Tab.0.center/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1604922425985" />
-    <state width="1877" height="336" key="GridCell.Tab.0.left" timestamp="1604957435608">
+    <state width="1877" height="336" key="GridCell.Tab.0.left" timestamp="1604958519918">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="336" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604957435608" />
+    <state width="1877" height="336" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604958519918" />
     <state width="1456" height="331" key="GridCell.Tab.0.left/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1604922425985" />
-    <state width="1877" height="336" key="GridCell.Tab.0.right" timestamp="1604957435608">
+    <state width="1877" height="336" key="GridCell.Tab.0.right" timestamp="1604958519918">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="336" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604957435608" />
+    <state width="1877" height="336" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604958519918" />
     <state width="1456" height="331" key="GridCell.Tab.0.right/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1604922425985" />
     <state x="212" y="92" width="1632" height="868" key="MergeDialog" timestamp="1604877479046">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -286,10 +281,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="475" y="248" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604957547665" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1604955156602">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1604958139966">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604955156602" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604958139966" />
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604673410480">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
