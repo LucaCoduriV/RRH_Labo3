@@ -19,7 +19,7 @@ const unsigned ANNEE_MIN = 1900, ANNEE_MAX = 2100;
 
 /**
  * Vérifie le type de la saisie utilisateur et si les paramètres appartiennent
- * bien à l'intervalle défini et, s'il n'y a pas d'erreurs, attribue par référence
+ * bien à l'intervalle défini et, s'il n'y a pas d'erreur, attribue par référence
  * les valeurs entrées par l'utilisateur aux variables entrées en paramètres.
  * @param mois [1 - 12]
  * @param annee [ANNEE_MIN - ANNEE_MAX]
@@ -57,7 +57,7 @@ void afficherCalendrier(unsigned mois, unsigned annee);
 unsigned short dateEnJourSemaine(unsigned jour, unsigned mois, unsigned annee);
 
 /**
- * Renvoie le nombre de jours présent dans le mois d'une année.
+ * Renvoie le nombre de jours présents dans le mois d'une année.
  * @param mois [1 - 12]
  * @param annee [ANNEE_MIN - ANNEE_MAX]
  * @return le nombre de jours [28 - 30]
