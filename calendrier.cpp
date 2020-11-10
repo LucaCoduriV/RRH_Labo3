@@ -1,10 +1,10 @@
 /*
 -----------------------------------------------------------------------------------
-Nom du fichier : fonctions.cpp
+Nom du fichier : calendrier.cpp
 Auteur(s) : Tania Nunez & Chloé Fontaine & Luca Coduri
 Date creation : 6.11.2020
 Description : Ce fichier contient l'implémentation des fonctions déclarées dans
-fonctions.h.
+calendrier.h.
 Remarque(s) : Le bon fonctionnement des fonctions est assuré avec des asserts.
 Pour les désactiver, ajoutez "#define NDEBUG" au-dessus des "#include".
 Compilateur : Mingw-w64 g++ 8.1.0
@@ -14,7 +14,7 @@ Compilateur : Mingw-w64 g++ 8.1.0
 #include <limits>
 #include <iomanip>
 #include <cassert>
-#include "fonctions.h"
+#include "calendrier.h"
 
 using namespace std;
 

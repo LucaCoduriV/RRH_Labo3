@@ -18,7 +18,7 @@ Compilateur : Mingw-w64 g++ 8.1.0
 */
 #include <cstdlib>
 #include <iostream>
-#include "fonctions.h"
+#include "calendrier.h"
 
 using namespace std;
 
