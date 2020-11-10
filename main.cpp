@@ -54,6 +54,8 @@ int main() {
             cout << endl << "Votre reponse n'est pas valide. Veuillez SVP "
                             "recommencer." << endl;
          }
+         // Vérifier que l'utilisateur n'a rien écrit d'autre que 'o' ou 'n'.
+         saisieOK = saisieOK && cin.peek() == '\n';
          cin.ignore(numeric_limits<streamsize>::max(), '\n');
          cout << endl;
       } while (!saisieOK);
