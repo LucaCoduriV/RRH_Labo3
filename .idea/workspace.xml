@@ -29,10 +29,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9c5c2ca8-e9d2-4938-93c3-c313a1f610c7" name="Default Changelist" comment="CHANGEMENT VARIABLE MOIS EN UNSIGNED SHORT !!!!!!">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fonctions.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/fonctions.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fonctions.h" beforeDir="false" afterPath="$PROJECT_DIR$/fonctions.h" afterDir="false" />
+    <list default="true" id="9c5c2ca8-e9d2-4938-93c3-c313a1f610c7" name="Default Changelist" comment="Changement fonctions nbJourMois en unsigned short">
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -101,7 +98,7 @@
       <workItem from="1604910140355" duration="2338000" />
       <workItem from="1604916499004" duration="7359000" />
       <workItem from="1604954320975" duration="3714000" />
-      <workItem from="1604995354207" duration="2743000" />
+      <workItem from="1604995354207" duration="2952000" />
     </task>
     <task id="LOCAL-00001" summary="Formule zeller">
       <created>1604668566414</created>
@@ -215,7 +212,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605001726792</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Changement fonctions nbJourMois en unsigned short">
+      <created>1605001900258</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1605001900258</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -247,7 +251,8 @@
     <MESSAGE value="Ajout de commentaire" />
     <MESSAGE value="Ajout des en-têtes + commentaires" />
     <MESSAGE value="CHANGEMENT VARIABLE MOIS EN UNSIGNED SHORT !!!!!!" />
-    <option name="LAST_COMMIT_MESSAGE" value="CHANGEMENT VARIABLE MOIS EN UNSIGNED SHORT !!!!!!" />
+    <MESSAGE value="Changement fonctions nbJourMois en unsigned short" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changement fonctions nbJourMois en unsigned short" />
   </component>
   <component name="WindowStateProjectService">
     <state x="184" y="86" key="DiffContextDialog" timestamp="1604671729005">
@@ -294,10 +299,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="475" y="248" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604957547665" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1605001731702">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1605002019784">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605001731702" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605002019784" />
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604673410480">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

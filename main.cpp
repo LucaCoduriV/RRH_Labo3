@@ -16,9 +16,6 @@ non, nous ne traitons que le premier caractère de l'entrée.
 Compilateur : Mingw-w64 g++ 8.1.0
 -----------------------------------------------------------------------------------
 */
-//todo renommer fichier fonctions.h et .cpp calculAffichageCalendrier.h/cpp
-//todo verifier la check list
-
 
 #include <cstdlib>
 #include <iostream>
