@@ -16,7 +16,6 @@ non, nous ne traitons que le premier caractère de l'entrée.
 Compilateur : Mingw-w64 g++ 8.1.0
 -----------------------------------------------------------------------------------
 */
-
 #include <cstdlib>
 #include <iostream>
 #include "fonctions.h"

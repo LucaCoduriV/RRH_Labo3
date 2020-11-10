@@ -29,7 +29,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9c5c2ca8-e9d2-4938-93c3-c313a1f610c7" name="Default Changelist" comment="Changement fonctions nbJourMois en unsigned short">
+    <list default="true" id="9c5c2ca8-e9d2-4938-93c3-c313a1f610c7" name="Default Changelist" comment="removed todos">
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -98,7 +98,7 @@
       <workItem from="1604910140355" duration="2338000" />
       <workItem from="1604916499004" duration="7359000" />
       <workItem from="1604954320975" duration="3714000" />
-      <workItem from="1604995354207" duration="2952000" />
+      <workItem from="1604995354207" duration="2975000" />
     </task>
     <task id="LOCAL-00001" summary="Formule zeller">
       <created>1604668566414</created>
@@ -219,7 +219,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605001900258</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="removed todos">
+      <created>1605002073621</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1605002073621</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -252,7 +259,8 @@
     <MESSAGE value="Ajout des en-têtes + commentaires" />
     <MESSAGE value="CHANGEMENT VARIABLE MOIS EN UNSIGNED SHORT !!!!!!" />
     <MESSAGE value="Changement fonctions nbJourMois en unsigned short" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changement fonctions nbJourMois en unsigned short" />
+    <MESSAGE value="removed todos" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed todos" />
   </component>
   <component name="WindowStateProjectService">
     <state x="184" y="86" key="DiffContextDialog" timestamp="1604671729005">
@@ -299,10 +307,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="475" y="248" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604957547665" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1605002019784">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1605002075217">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605002019784" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605002075217" />
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604673410480">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
