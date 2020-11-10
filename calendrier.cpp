@@ -162,5 +162,5 @@ bool anneeCorrecte(unsigned annee) {
 
 bool dateDebutEstAnterieure(unsigned moisDebut, unsigned anneeDebut, unsigned
 moisFin, unsigned anneeFin) {
-   return anneeDebut <= anneeFin || (anneeDebut == anneeFin && moisDebut <= moisFin);
+   return anneeDebut < anneeFin || (anneeDebut == anneeFin && moisDebut <= moisFin);
 }
